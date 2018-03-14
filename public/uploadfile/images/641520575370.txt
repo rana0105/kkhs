@@ -1,0 +1,123 @@
+https://www.tanjimenterprise.com:2083
+8U6dg53Jwh
+tanjimen
+_d^58gE]EE]&
+tanjimen_pos
+
+himelsat
+5P0cysc80W
+
+great neighbor tanjim
+Gio&-%eyeXOY
+tanjimen_great
+
+lameridian
+unlockjo_lamribmw
++(}P(!)sk%[M
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=devcornn_tvcab
+DB_USERNAME=devcornn_tvcab
+DB_PASSWORD=^2&*(jr2#xSx
+
+great neighbor main domain 
+https://gator4234.hostgator.com:2083/
+bamrmm
+8fnoUHlt+h9e
+upload site
+aG1T#@-$Nzic
+bamrmm_great
+'/home4/bamrmm/public_html/app_images/resize_images/'. $filename;
+'/home4/bamrmm/public_html/app_images/resize_images/',
+
+http://www.winskitpos.club/cpanel
+UserName: winskitpos
+PassWord: fPx(qYk!U?TG
+
+TV Cable
+http://192.145.233.170:2082/
+himelsat
+5P0cysc80W
+
+http://www.hello-sylhet.com:2082/
+Username: hellosyl
+Password: PE23xmx7d0
+
+SSH pass +=51_^P0oah&
+id id_rsa
+
+https://p3plcpnl0915.prod.phx3.secureserver.net:2083/
+username->gabuu
+password->Hax$tfwAAUTg2t
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=gabuu
+DB_USERNAME=gabuu_main
+DB_PASSWORD=gvvcom9hFki.
+
+
+DB_DATABASE=hellosyl_rental
+DB_USERNAME=hellosyl_lionren
+DB_PASSWORD=lionrental0105
+
+
+devcorn.net:2082-> devcornn ->d1f3o83GJr
+
+C-Vgq+L2]4a!
+
+pass: KY=M96F7@;s6
+pass: lionrental0105
+user : hellosyl_lionren
+database : hellosyl_rental
+
+http://pos.devcorn.net/
+    margin-top: -35%;
+    margin-bottom: 37%;
+    margin-top: -26%;
+}
+
+data & user : winskitpos_main
+
+pass: &{&dXo%*EuU(
+
+DB_DATABASE= devcornn_pos
+DB_USERNAME= devcornn_pos
+DB_PASSWORD= QK7.FfaTcu?t
+
+DB_DATABASE= hellosyl_pos
+DB_USERNAME= hellosyl_pos
+
+DB_PASSWORD= 3Vz6^qV;2hP{
+
+DB_DATABASE= devcornn_inven
+DB_USERNAME= devcornn_inven
+
+DB_PASSWORD= H~%@;0w#f9,c
+
+'/home/hellosyl/pos.hello-sylhet.com/upload_file/resize_images/'. $filename;
+'/home/devcornn/pos.devcorn.net/upload_file/resize_images/'. $filename;
+'/home/devcornn/pos.devcorn.net/upload_file/resize_images/',
+'/home/devcornn/pos.devcorn.net/images/resize_images/'. $filename;
+'/home/hellosyl/pos.hello-sylhet.com/upload_file/resize_images/'
+
+
+tabariaig@gmail.com
+Gabuu123!
+
+dstracke@example.com
+
+$pid = $request->pid;
+        $date = $request->date;
+        $da=date_create($date);
+        $year=date_create($date);
+        $year = date_format($year,"Y");
+        $arr1 = str_split($year, 2);
+        $sy = $arr1[1];
+        $d = date_format($da,"m");
+        $yd = $sy . $d;
+        $id = $pid . '-' . $yd;
+        dd($id);
