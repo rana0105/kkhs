@@ -15,8 +15,10 @@
         <div class="carousel-item item{{ $key == 0 ? ' active' : '' }}">
           <img class="d-block w-100" src="{{ asset('uploadfile/images') }}/{{ $slider ? $slider->image : 'image.jpg' }}" alt="{{ $slider ? $slider->image : 'image.jpg' }}" alt="First slide">
           <div class="carousel-caption d-none d-md-block">
-            <h5>{{ $slider ? $slider->title : '' }}</h5>
-            <p>{!! $slider ? $slider->description : '' !!}</p>
+            <div class="carousel-text-style">
+                <h5>{{ $slider ? $slider->title : '' }}</h5>
+                <p>{!! $slider ? $slider->description : '' !!}</p>
+            </div>
           </div>
         </div>
         @endforeach

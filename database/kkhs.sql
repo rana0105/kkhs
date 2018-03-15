@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4deb1
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2
+-- http://www.phpmyadmin.net
 --
--- Host: localhost:3306
--- Generation Time: Mar 14, 2018 at 09:24 PM
--- Server version: 5.7.18-0ubuntu0.16.10.1
--- PHP Version: 7.0.18-0ubuntu0.16.10.1
+-- Host: localhost
+-- Generation Time: Mar 15, 2018 at 09:30 AM
+-- Server version: 5.7.21-0ubuntu0.16.04.1
+-- PHP Version: 7.0.25-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -534,7 +534,7 @@ INSERT INTO `sevents` (`id`, `title`, `time`, `date`, `location`, `description`,
 CREATE TABLE `sliders` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -545,11 +545,11 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `title`, `description`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Why choose school', '<p>sdsdsdsdsds wrwwe sdsds</p>', '241521033612.jpg', '2018-02-25 07:03:57', '2018-03-14 07:20:12'),
-(2, 'Dhaka', '<p>dfdfd d et et et rrtrtr</p>', '351521036089.jpg', '2018-02-25 08:53:40', '2018-03-14 08:01:29'),
-(3, 'Where can I get some?', '<p>gftyu7i7 44tr</p>', '451521033594.jpg', '2018-03-09 21:26:55', '2018-03-14 07:19:54'),
-(4, 'Put HealthDay to Work for You', '<p>ere b44554</p>', '581521033573.jpg', '2018-03-09 21:27:25', '2018-03-14 07:19:34'),
-(5, 'Why do we use it?', '<p>rti7ierer ere r tu r</p>', '141521034112.jpg', '2018-03-09 21:27:55', '2018-03-14 07:28:32');
+(1, 'Why choose school', '<p style="text-align: justify;">Rabada was found guilty of making inappropriate and deliberate contact with Australian captain Steven Smith after dismissing him in the first innings.</p>', '241521033612.jpg', '2018-02-25 07:03:57', '2018-03-15 03:26:13'),
+(2, 'South Africa correspondent, ESPNcricinfo', '<p style="text-align: justify;">Rabada was found guilty of making inappropriate and deliberate contact with Australian captain Steven Smith after dismissing him in the first innings.</p>', '351521036089.jpg', '2018-02-25 08:53:40', '2018-03-15 03:26:43'),
+(3, 'Where can I get some?', '<p style="text-align: justify;">Rabada was found guilty of making inappropriate and deliberate contact with Australian captain Steven Smith after dismissing him in the first innings.</p>', '451521033594.jpg', '2018-03-09 21:26:55', '2018-03-15 03:26:30'),
+(4, 'Put HealthDay to Work for You', '<p style="text-align: justify;">Rabada was found guilty of making inappropriate and deliberate contact with Australian captain Steven Smith after dismissing him in the first innings.</p>', '581521033573.jpg', '2018-03-09 21:27:25', '2018-03-15 03:27:00'),
+(5, 'Why do we use it?', '<p style="text-align: justify;">Rabada was found guilty of making inappropriate and deliberate contact with Australian captain Steven Smith after dismissing him in the first innings.</p>', '141521034112.jpg', '2018-03-09 21:27:55', '2018-03-15 03:23:49');
 
 -- --------------------------------------------------------
 
@@ -656,7 +656,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `role_id`, `is_activated`, `link`, `stage`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Md. Morshed Khan Rana', 'ranamim', 'admin@admin.com', 1, 1, NULL, 1, '$2y$10$pz19k.JR7DvkavZgKwSdSuz0E7YWABIddbcCFB0l9PZRXXOmUDu8u', 'Zt6XTJkTqsHtiJSVlfNxayNdMYh71yD7ydzcNDbtHzXOvcuHhk6Kj6vUgUft', '2018-02-20 09:39:18', '2018-02-20 09:39:18'),
+(1, 'Md. Morshed Khan Rana', 'ranamim', 'admin@admin.com', 1, 1, NULL, 1, '$2y$10$pz19k.JR7DvkavZgKwSdSuz0E7YWABIddbcCFB0l9PZRXXOmUDu8u', 'Vzhp42fQfNroFP0XACb3aJKTKSoZUpIQgTidnsF5h97L1QRpzcmj0UbpUDDx', '2018-02-20 09:39:18', '2018-02-20 09:39:18'),
 (2, 'Marilyne White', NULL, 'pagac.treva@example.org', 1, 1, NULL, 1, '$2y$10$XlkoFed4pOxDRuC1bJzKy.UBY5TcHcIX.ggeZZFwUt0wBeAbtt0va', '6MtF4Z8bNc', '2018-02-20 09:39:19', '2018-02-20 09:39:19'),
 (3, 'Mrs. Gina Pfannerstill', NULL, 'walton04@example.com', 1, 1, NULL, 1, '$2y$10$XlkoFed4pOxDRuC1bJzKy.UBY5TcHcIX.ggeZZFwUt0wBeAbtt0va', 'U52OukYvmG', '2018-02-20 09:39:19', '2018-02-20 09:39:19'),
 (4, 'Gloria Hilll', NULL, 'andreanne88@example.net', 1, 1, NULL, 1, '$2y$10$XlkoFed4pOxDRuC1bJzKy.UBY5TcHcIX.ggeZZFwUt0wBeAbtt0va', 'iXwgZ8RZJF', '2018-02-20 09:39:19', '2018-02-20 09:39:19'),

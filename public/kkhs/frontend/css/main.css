@@ -684,3 +684,23 @@ ul.text-center {
     margin-left: 15px;
     margin-bottom: 3px;
 }
+
+.carousel-caption.d-none.d-md-block {
+    background: #000000cc;
+    width: 430px;
+    height: 170px;
+    min-height: 170px;
+    top: 34%;
+}
+
+.carousel-text-style {
+    position:  absolute;
+    text-align:  center;
+    padding-left: 10px;
+    padding-right: 10px;
+    top: 15%;
+}
+
+.carousel-text-style>p {
+    color: #37bf90;
+}
