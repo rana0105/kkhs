@@ -86,6 +86,7 @@ $(document).ready(function(){
         'searchKey':searchKey,
       },
       success: function(data) {
+        console.log(data);
         $('.searchExStudentResult').html(data);
       }
     });

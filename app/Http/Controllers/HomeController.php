@@ -91,7 +91,7 @@ class HomeController extends Controller
         $searchKey = $request->searchKey;
         if($request->ajax()){
             if($searchKey != null){
-                $result = ExStudent::where('ex_student_phone', 'like', '%' . $searchKey . '%')
+                $exStudent = ExStudent::where('ex_student_phone', 'like', '%' . $searchKey . '%')
                 ->orWhere('ex_student_education', 'like', '%' . $searchKey . '%')
                 ->orWhere('ex_student_education_institution', 'like', '%' . $searchKey . '%')
                 ->orWhere('ex_student_profession', 'like', '%' . $searchKey . '%')
@@ -104,7 +104,9 @@ class HomeController extends Controller
                         $query->where('name', 'like', '%'.$searchKey.'%');
                     })
                 ->get();
-                return response()->json();
+                // return view('frontend.pages.ex_student')->with(, compact('exStudent', json_decode($exStudent,true)));
+                dd($exStudent);
+                return response()->json($exStudent);
             }else{
                 return 'Data not found';
             }
