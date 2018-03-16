@@ -1280,10 +1280,19 @@ a.button-style:hover {
     border: 1px solid #dadada;
 }
 
-
+form.form-style-search {
+    width: 50%;
+}
 /* small nav section */
 
 .services-breadcrumb {
+    width: 100%;
+    border: none;
+    padding: 1em 0;
+    background: #eee;
+}
+
+.search-breadcrumb {
     width: 100%;
     border: none;
     padding: 1em 0;
@@ -1303,12 +1312,30 @@ ul.short_ls li {
     display: inline-block;
 }
 
+ul.short_rs {
+    text-align: right;
+}
+
+ul.short_rs li {
+    list-style: none;
+    display: inline-block;
+}
+
 .inner_breadcrumb {
     width: 80%;
     margin: 0 auto;
 }
 
+div#custom-search-input span {
+    padding: 0px;
+}
+
 ul.short_ls li a {
+    color: #EF5861;
+    text-decoration: none;
+}
+
+ul.short_rs li a {
     color: #EF5861;
     text-decoration: none;
 }

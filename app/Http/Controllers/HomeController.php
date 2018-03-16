@@ -86,6 +86,32 @@ class HomeController extends Controller
         return view('frontend.pages.exstudentShow', compact('exStudent'));
     }
 
+    public function searchExStudent(Request $request)
+    {
+        $searchKey = $request->searchKey;
+        if($request->ajax()){
+            if($searchKey != null){
+                $result = ExStudent::where('ex_student_phone', 'like', '%' . $searchKey . '%')
+                ->orWhere('ex_student_education', 'like', '%' . $searchKey . '%')
+                ->orWhere('ex_student_education_institution', 'like', '%' . $searchKey . '%')
+                ->orWhere('ex_student_profession', 'like', '%' . $searchKey . '%')
+                ->orWhere('ex_student_designation', 'like', '%' . $searchKey . '%')
+                ->orWhere('ex_student_profession_institute', 'like', '%' . $searchKey . '%')
+                ->orWhere('ex_student_address', 'like', '%' . $searchKey . '%')
+                ->orWhere('ex_student_passing_year', 'like', '%' . $searchKey . '%')
+                ->orWhere('user_id', 'like', '%' . $searchKey . '%')
+                ->orWhereHas('exStudentInfo', function ($query) use ($searchKey) {
+                        $query->where('name', 'like', '%'.$searchKey.'%');
+                    })
+                ->get();
+                return response()->json();
+            }else{
+                return 'Data not found';
+            }
+        }
+        
+    }
+
     public function getGallery()
     {
         $galleries = Gallery::orderBy('id', 'desc')->paginate(8);

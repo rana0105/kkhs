@@ -3,16 +3,17 @@
 	<div class="inner_page_agile">
 
 	</div>
-	<div class="services-breadcrumb">
-		<div class="inner_breadcrumb">
-			<ul class="short_ls">
-				<li>
-					<a href="{{url('/')}}">Home</a>
-					<span>| |</span>
-				</li>
-				<li>Ex Student</li>
-			</ul>
-		</div>
+	<div class="search-breadcrumb d-flex justify-content-center">
+      <form class="form-style-search" action="">
+          <div class="input-group col-md-12">
+              <input type="text" class="searchExStudent form-control" placeholder="Search...." />
+              <span class="input-group-btn">
+                  <button class="btn button-style" type="button">
+                      <i class="fa fa-search"></i>
+                  </button>
+              </span>
+          </div>  
+      </form>
 	</div>
 <div class="container">
 	<div class="row pt-md">
@@ -41,6 +42,9 @@
     </div>
     @endforeach
     @endif
+    <div class="searchExStudentResult">
+      
+    </div>
 	</div>
 </div>
 
@@ -71,6 +75,21 @@ $(document).on('click', '.exstudent_show_modal', function() {
        $.get('/exStudentInfo/'+id, function(data){
        $('.bd-example-modal-lg').find('.exStudent-show').first().html(data);
     });
+});
+$(document).ready(function(){
+  $('.searchExStudent').keyup(function(){
+    var searchKey = $(this).val();
+    $.ajax({
+      url:'{{ URL::to('/searchExStudent') }}',
+      type: "get",
+      data: {
+        'searchKey':searchKey,
+      },
+      success: function(data) {
+        $('.searchExStudentResult').html(data);
+      }
+    });
+  });
 });
 </script>
 @endsection

@@ -6,6 +6,7 @@ Route::get('teacher','HomeController@getTeachers')->name('teacher.show');
 Route::get('current/student','HomeController@getCurrentStudent')->name('current.student');
 Route::get('/currentStudentInfo/{id}','HomeController@currentStudentInfo');
 Route::get('ex/student','HomeController@getExStudent')->name('ex.student');
+Route::get('searchExStudent','HomeController@searchExStudent');
 Route::get('/exStudentInfo/{id}','HomeController@exStudentInfo');
 Route::get('gallery','HomeController@getGallery')->name('gallery');
 Route::get('contact','HomeController@getContact')->name('contact');

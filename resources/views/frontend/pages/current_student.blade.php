@@ -3,17 +3,18 @@
 	<div class="inner_page_agile">
 
 	</div>
-	<div class="services-breadcrumb">
-		<div class="inner_breadcrumb">
-			<ul class="short_ls">
-				<li>
-					<a href="{{url('/')}}">Home</a>
-					<span>| |</span>
-				</li>
-				<li>Current Student</li>
-			</ul>
-		</div>
-	</div>
+	<div class="search-breadcrumb d-flex justify-content-center">
+      <form class="form-style-search" action="">
+          <div class="input-group col-md-12">
+              <input type="text" class="form-control" placeholder="Search...." />
+              <span class="input-group-btn">
+                  <button class="btn button-style" type="button">
+                      <i class="fa fa-search"></i>
+                  </button>
+              </span>
+          </div>  
+      </form>
+  </div>
 <div class="container">
 	<div class="row pt-md">
     @if(sizeof($currentStudent)>0)
