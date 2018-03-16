@@ -3,17 +3,69 @@
 	<div class="inner_page_agile">
 
 	</div>
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-center">
+      <div class="f-style-text">
+        <h6>Search Filtering Student</h6>
+      </div>
+    </div>
+  </div>
 	<div class="search-breadcrumb d-flex justify-content-center">
-      <form class="form-style-search" action="">
-          <div class="input-group col-md-12">
-              <input type="text" class="form-control" placeholder="Search...." />
-              <span class="input-group-btn">
-                  <button class="btn button-style" type="button">
-                      <i class="fa fa-search"></i>
-                  </button>
-              </span>
-          </div>  
-      </form>
+    
+    <div class="row filter-style">
+      {{-- <form class="form-style-search" action=""> --}}
+          <div class="col-md-3">
+            <div class="form-group row">
+              <label for="name" class="col-md-3 col-form-label">Name</label>
+                <div class="col-md-9">
+                  <input type="text" name="name" class="form-control name" id="name">
+                </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group row">
+              <label for="class" class="col-md-4 col-form-label">Class</label>
+                <div class="col-md-8">
+                  <select name="class" id="class" class="form-control class">
+                    <option value="">Select</option>
+                    <option value="0">Six</option>
+                    <option value="1">Seven</option>
+                    <option value="2">Eight</option>
+                    <option value="3">Nine</option>
+                    <option value="4">Ten</option>
+                  </select>
+                </div>
+              </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group row">
+              <label for="department" class="col-md-5 col-form-label">Department</label>
+                <div class="col-md-7">
+                  <select name="department" id="department" class="form-control department">
+                    <option value="">Select</option>
+                    <option value="0">Science</option>
+                    <option value="1">Arts</option>
+                    <option value="2">Commerce</option>
+                  </select>
+                </div>
+              </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group row">
+              <label for="section" class="col-md-4 col-form-label">Section</label>
+                <div class="col-md-8">
+                  <select name="section" id="section" class="form-control section">
+                    <option value="">Select</option>
+                    <option value="0">A</option>
+                    <option value="1">B</option>
+                    <option value="2">C</option>
+                    <option value="3">D</option>
+                  </select>
+                </div>
+            </div>
+          </div>
+      {{-- </form> --}}
+    </div>
   </div>
 <div class="container">
 	<div class="row pt-md">
@@ -43,6 +95,9 @@
     @endforeach
     @endif
 	</div>
+  <div class="currentStudentShow">
+          
+        </div>
 </div>
 
 <!-- modal -->
@@ -73,5 +128,62 @@ $(document).on('click', '.currentstudent_show_modal', function() {
        $('.bd-example-modal-lg').find('.currentStudent-show').first().html(data);
     });
 });
+
+$(document).ready(function(){
+  studentSearch();
+});
+
+function studentSearch(){
+
+    $('#name').keyup(function() {
+      var name = $(this).val();
+      var sclass = $('#class').val();
+      var department = $('#department').val();
+      var section = $('#section').val();
+      getSearchStudent(sclass,name,department,section);
+    });
+
+    $('#class').change(function() {
+      var sclass = $(this).val();
+      var name = $('#name').val();
+      var department = $('#department').val();
+      var section = $('#section').val();
+      getSearchStudent(sclass,name,department,section);
+    });
+
+    $('#department').change(function() {
+      var department = $(this).val();
+      var name = $('#name').val();
+      var sclass = $('#class').val();
+      var section = $('#section').val();
+      getSearchStudent(sclass,name,department,section);
+    });
+
+    $('#section').change(function() {
+      var section = $(this).val();
+      var name = $("#name").val();
+      var sclass = $('#class').val();
+      var department = $('#department').val();
+      getSearchStudent(sclass,name,department,section);
+    });
+  }
+
+  function getSearchStudent(sclass,name,department,section) {
+    //console.log(sclass,name,department,section);
+    $.ajax({
+      url:'{{ URL::to('/searchCurrentStudent') }}',
+      type: "get",
+      data: {
+        'name':name,
+        'sclass':sclass,
+        'department':department,
+        'section':section,
+      },
+      success: function(data) {
+        // console.log(data);
+        $('.currentStudentShow').html(data);
+      }
+    });
+  } 
 </script>
 @endsection

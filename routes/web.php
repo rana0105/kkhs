@@ -4,6 +4,7 @@ Route::get('/eventShow/{id}','HomeController@eventShow');
 Route::get('about-us','HomeController@getAbout')->name('about-us');
 Route::get('teacher','HomeController@getTeachers')->name('teacher.show');
 Route::get('current/student','HomeController@getCurrentStudent')->name('current.student');
+Route::get('searchCurrentStudent','HomeController@searchCurrentStudent');
 Route::get('/currentStudentInfo/{id}','HomeController@currentStudentInfo');
 Route::get('ex/student','HomeController@getExStudent')->name('ex.student');
 Route::get('searchExStudent','HomeController@searchExStudent');

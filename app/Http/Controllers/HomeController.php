@@ -74,6 +74,22 @@ class HomeController extends Controller
         return view('frontend.pages.currentStudentShow', compact('currentStudent'));
     }
 
+    public function searchCurrentStudent(Request $request)
+    {
+        $name = $request->name;
+        $sclass = $request->sclass;
+        $department = $request->department;
+        $section = $request->section;
+        dd($sclass);
+        if($request->ajax()){
+            if($name != '' && $sclass != '' && $department != '' && $section != ''){
+                // $currentStudent = CurrentStudent::
+            }else{
+                return 'Data not found';
+            }
+        }
+    }
+
     public function getExStudent()
     {
         $exStudent = ExStudent::with('exStudentInfo')->get();
