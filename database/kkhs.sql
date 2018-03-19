@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 15, 2018 at 09:30 AM
+-- Generation Time: Mar 19, 2018 at 05:09 AM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
 -- PHP Version: 7.0.25-0ubuntu0.16.04.1
 
@@ -65,6 +65,26 @@ INSERT INTO `achieves` (`id`, `date`, `title`, `description`, `created_at`, `upd
 (1, '2000 - 2017', 'Ranked Top 1st', '<p style="text-align: justify;"><span style="color: #999999; font-family: \'Open Sans\', sans-serif; font-size: 15px; letter-spacing: 1px; background-color: #f9f9f6;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</span></p>', '2018-03-13 03:49:33', '2018-03-14 08:24:39'),
 (2, '2011 - 2012', 'Queen\'s Anniversary Prize', '<p style="box-sizing: border-box; margin: 0px; letter-spacing: 1px; font-size: 15px; line-height: 1.9; color: #999999; font-family: \'Open Sans\', sans-serif; text-align: justify;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>\r\n<p>&nbsp;</p>', '2018-03-13 03:56:30', '2018-03-14 08:25:27'),
 (3, '2004 - 2017', 'Excellent University Guide', '<p style="text-align: justify;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>\r\n<p>&nbsp;</p>', '2018-03-13 03:57:02', '2018-03-14 08:25:10');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `autoids`
+--
+
+CREATE TABLE `autoids` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `auto_id` int(11) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `autoids`
+--
+
+INSERT INTO `autoids` (`id`, `auto_id`, `created_at`, `updated_at`) VALUES
+(1, 2, NULL, '2018-03-18 22:23:20');
 
 -- --------------------------------------------------------
 
@@ -231,7 +251,8 @@ CREATE TABLE `gardians` (
 --
 
 INSERT INTO `gardians` (`id`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 7, '2018-02-20 20:24:18', '2018-02-20 20:24:18');
+(1, 7, '2018-02-20 20:24:18', '2018-02-20 20:24:18'),
+(2, 18, '2018-03-18 22:06:05', '2018-03-18 22:06:05');
 
 -- --------------------------------------------------------
 
@@ -267,7 +288,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (49, '2018_03_07_051919_create_testmonials_table', 9),
 (50, '2018_03_08_161324_create_notices_table', 10),
 (52, '2018_02_20_150249_create_current_students_table', 11),
-(53, '2018_03_13_092047_create_achieves_table', 12);
+(53, '2018_03_13_092047_create_achieves_table', 12),
+(54, '2018_03_19_030239_create_autoids_table', 13);
 
 -- --------------------------------------------------------
 
@@ -311,7 +333,11 @@ INSERT INTO `model_has_roles` (`role_id`, `model_id`, `model_type`) VALUES
 (3, 11, 'App\\User'),
 (2, 12, 'App\\User'),
 (3, 13, 'App\\User'),
-(3, 14, 'App\\User');
+(3, 14, 'App\\User'),
+(3, 17, 'App\\User'),
+(4, 18, 'App\\User'),
+(2, 19, 'App\\User'),
+(3, 20, 'App\\User');
 
 -- --------------------------------------------------------
 
@@ -545,11 +571,11 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `title`, `description`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Why choose school', '<p style="text-align: justify;">Rabada was found guilty of making inappropriate and deliberate contact with Australian captain Steven Smith after dismissing him in the first innings.</p>', '241521033612.jpg', '2018-02-25 07:03:57', '2018-03-15 03:26:13'),
+(1, 'Why choose school', '<p style="text-align: justify;">Rabada was found guilty of making inappropriate and deliberate contact with Australian captain Steven Smith after dismissing him in the first innings.</p>', '951521172607.png', '2018-02-25 07:03:57', '2018-03-15 21:56:48'),
 (2, 'South Africa correspondent, ESPNcricinfo', '<p style="text-align: justify;">Rabada was found guilty of making inappropriate and deliberate contact with Australian captain Steven Smith after dismissing him in the first innings.</p>', '351521036089.jpg', '2018-02-25 08:53:40', '2018-03-15 03:26:43'),
 (3, 'Where can I get some?', '<p style="text-align: justify;">Rabada was found guilty of making inappropriate and deliberate contact with Australian captain Steven Smith after dismissing him in the first innings.</p>', '451521033594.jpg', '2018-03-09 21:26:55', '2018-03-15 03:26:30'),
 (4, 'Put HealthDay to Work for You', '<p style="text-align: justify;">Rabada was found guilty of making inappropriate and deliberate contact with Australian captain Steven Smith after dismissing him in the first innings.</p>', '581521033573.jpg', '2018-03-09 21:27:25', '2018-03-15 03:27:00'),
-(5, 'Why do we use it?', '<p style="text-align: justify;">Rabada was found guilty of making inappropriate and deliberate contact with Australian captain Steven Smith after dismissing him in the first innings.</p>', '141521034112.jpg', '2018-03-09 21:27:55', '2018-03-15 03:23:49');
+(5, 'Why do we use it?', '<p style="text-align: justify;">Rabada was found guilty of making inappropriate and deliberate contact with Australian captain Steven Smith after dismissing him in the first innings.</p>', '711521172401.png', '2018-03-09 21:27:55', '2018-03-15 21:53:22');
 
 -- --------------------------------------------------------
 
@@ -573,7 +599,9 @@ INSERT INTO `students` (`id`, `user_id`, `student_status`, `created_at`, `update
 (1, 6, 2, '2018-02-20 20:23:35', '2018-03-13 00:22:00'),
 (2, 11, 1, '2018-02-26 00:51:15', '2018-03-13 00:57:57'),
 (3, 13, 2, '2018-03-10 08:17:23', '2018-03-10 09:22:49'),
-(4, 14, 2, '2018-03-11 02:11:44', '2018-03-13 00:58:04');
+(4, 14, 2, '2018-03-11 02:11:44', '2018-03-13 00:58:04'),
+(7, 17, 0, '2018-03-18 22:04:16', '2018-03-18 22:04:16'),
+(8, 20, 0, '2018-03-18 22:23:20', '2018-03-18 22:23:20');
 
 -- --------------------------------------------------------
 
@@ -604,7 +632,8 @@ INSERT INTO `teachers` (`id`, `user_id`, `teacher_phone`, `teacher_education`, `
 (1, 5, '01923883090', 'Msc in Geology and Mining', 'Principle', 'Kayapara Kamarkuri High School', 'Prosadpur, Manda, Naogaon', 'https://www.facebook.com/,https://twitter.com/,https://www.linkedin.com/', '501520648823.jpg', 1, '2018-02-20 20:11:43', '2018-03-10 03:42:19'),
 (2, 9, '32136463', 'diyrtrr', 'fdeet55', 'rtrtyyiuii', 'ruyi564565hjh', 'https://www.facebook.com/,https://twitter.com/,https://www.linkedin.com/', '461520649172.jpeg', 2, '2018-02-25 23:53:34', '2018-03-10 00:28:05'),
 (3, 10, '31364645', 'dfutyer', 'uyuyuyrt', 'r3445rtrr', 'ereyuyu', 'https://www.facebook.com/rana0105cse/,https://twitter.com/rana0105cse/,https://www.linkedin.com/in/rana0105cse/', '811520649946.jpg', 1, '2018-02-26 00:41:09', '2018-03-09 20:45:46'),
-(4, 12, '2146342', 'IT', 'Assistant Teacher', 'KKHS', 'Manda', 'https://www.facebook.com/,https://twitter.com/,https://www.linkedin.com/', '701520659319.jpg', 2, '2018-03-09 23:18:07', '2018-03-13 00:25:21');
+(4, 12, '2146342', 'IT', 'Assistant Teacher', 'KKHS', 'Manda', 'https://www.facebook.com/,https://twitter.com/,https://www.linkedin.com/', '701520659319.jpg', 2, '2018-03-09 23:18:07', '2018-03-13 00:25:21'),
+(5, 19, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-03-18 22:07:46', '2018-03-18 22:07:46');
 
 -- --------------------------------------------------------
 
@@ -643,6 +672,8 @@ CREATE TABLE `users` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `role_id` int(11) DEFAULT NULL,
   `is_activated` tinyint(4) DEFAULT '0',
+  `student_id` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `status` tinyint(4) NOT NULL DEFAULT '0',
   `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `stage` tinyint(4) NOT NULL DEFAULT '0',
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -655,21 +686,25 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `username`, `email`, `role_id`, `is_activated`, `link`, `stage`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Md. Morshed Khan Rana', 'ranamim', 'admin@admin.com', 1, 1, NULL, 1, '$2y$10$pz19k.JR7DvkavZgKwSdSuz0E7YWABIddbcCFB0l9PZRXXOmUDu8u', 'Vzhp42fQfNroFP0XACb3aJKTKSoZUpIQgTidnsF5h97L1QRpzcmj0UbpUDDx', '2018-02-20 09:39:18', '2018-02-20 09:39:18'),
-(2, 'Marilyne White', NULL, 'pagac.treva@example.org', 1, 1, NULL, 1, '$2y$10$XlkoFed4pOxDRuC1bJzKy.UBY5TcHcIX.ggeZZFwUt0wBeAbtt0va', '6MtF4Z8bNc', '2018-02-20 09:39:19', '2018-02-20 09:39:19'),
-(3, 'Mrs. Gina Pfannerstill', NULL, 'walton04@example.com', 1, 1, NULL, 1, '$2y$10$XlkoFed4pOxDRuC1bJzKy.UBY5TcHcIX.ggeZZFwUt0wBeAbtt0va', 'U52OukYvmG', '2018-02-20 09:39:19', '2018-02-20 09:39:19'),
-(4, 'Gloria Hilll', NULL, 'andreanne88@example.net', 1, 1, NULL, 1, '$2y$10$XlkoFed4pOxDRuC1bJzKy.UBY5TcHcIX.ggeZZFwUt0wBeAbtt0va', 'iXwgZ8RZJF', '2018-02-20 09:39:19', '2018-02-20 09:39:19'),
-(5, 'Ajahar Uddin', 'ajahar', 'ajahar@gmail.com', 2, 1, '8zP3jiJQ5JTd3bG5kWm8Pj7pkvbmlx', 1, '$2y$10$o.KKgp.bAfX3Bm/qkx/6ie.bPKPO9yCbWjFQq/CTxnjqekzAmhmSS', 'x1tVZgTHHP0RsF5JPMRB3PF4KVrTqDaIuFn2A4iVtDt1x8VTsQVEhZNaFrjL', '2018-02-20 20:11:42', '2018-03-10 03:36:16'),
-(6, 'Md. Morshed Khan Rana', 'rana0105', 'ra.ranacse@gmail.com', 3, 1, 'ccJBtbFJRMqnICMvp7hPoefk6MmiJ5', 1, '$2y$10$b3U0mb2tF0MHEmPA1mS3FOcZ3gUPWCQh5D81uPnifEZjnNnz6JCa.', 'kJEtSNz3ph5EAZkSylZ1GO4jiZkAmHmkxpzR81LMIJkn0yvd02rr1g9b2IXc', '2018-02-20 20:23:35', '2018-03-13 00:22:01'),
-(7, 'Mahin Uddin', 'mahin', 'mahin@gmail.com', 4, 1, 'Cy70IUMLnSBBnvV650XFWKBgsX5rZG', 1, '$2y$10$HYl92GGvWCu3joX2FKZakOa4j2RoE55j/4mkIumWPImEt5WrzDsJW', NULL, '2018-02-20 20:24:18', '2018-02-20 20:24:18'),
-(8, 'Md. Mahabub-Ul Alam Shamim', 'shamim', 'shamim@gmail.com', 1, 1, NULL, 1, '$2y$10$5T.3tLiebYn7.c/0iOOTE..d/g/hWTOaatLtM5raqY6lzDS9i07pu', NULL, '2018-02-25 23:36:36', '2018-02-25 23:36:36'),
-(9, 'Mahabub Mamun', 'mamun', 'mamun@gmail.com', 2, 1, NULL, 1, '$2y$10$bYcN.p760wPd57sN4vEbYe7zjo2rDPeR3GygRntUFBDJQbSYNocQ.', 'QpaJHj8xYENGqN9uiea2YfVFeia4UJ0uGon3WN08QLr4emyaYC5pTMH1dlyS', '2018-02-25 23:53:33', '2018-03-09 20:41:31'),
-(10, 'Nushrat Faria', 'nushrat', 'nushrat@gmail.com', 2, 1, NULL, 1, '$2y$10$YGIzO5KHQ8bKfwI3J.bRRuQ6VuNIPYN/MBxhS42yzFPAOBHiX1ugy', 'BWD7Zfxga7VmtRGxTKsV0Gy1H0vWPVXRT28dAy5pYybtAp5VV7LyHRPDzgi2', '2018-02-26 00:41:09', '2018-02-26 00:41:09'),
-(11, 'Mashrafee Mortoza Khan', 'mashrafee', 'mashrafee@gmail.com', 3, 1, NULL, 1, '$2y$10$FDDUwOoJu5rrMPS9U1pidumFx8rGc9bvtinejZ2AgE4WH78NJfSRC', 'HnrEHDpQcNK8XZj4cxgVmVh7nUEtgVqNSXmpPQjXkbE2kxfuXaAE74fJEype', '2018-02-26 00:51:15', '2018-03-13 00:57:57'),
-(12, 'Fatema Aka', 'fatema', 'fatema@gmail.com', 2, 1, NULL, 1, '$2y$10$oiCocBzXeH4zDNK8JsB5meuMWeuQFzdrnwWjxU5i9baiqJgfkY9hu', 'pqm3U8OLFDuJBXyql6fLXYtk4kPqQpuLOb6ZAAJToYnKQfTAk4bWjZ1Yo2oT', '2018-03-09 23:18:07', '2018-03-13 00:25:22'),
-(13, 'Mahabub-ul Alam Shamim', 'shamim1', 'shamim1@gmail.com', 3, 1, NULL, 1, '$2y$10$KgmcjQyRsi0uEl2cc96dz.Dji7b/EhFNd/k9VWXdTtq/zvJXOxGuu', '7QJ5t7Gg2W8R8WcZEMbJITyuhff13rLCWxedsX9atqbbXTFZ5ePWSN9c85VP', '2018-03-10 08:17:23', '2018-03-10 08:17:23'),
-(14, 'Aminul Islam', 'aminul', 'aminul@gmail.com', 3, 1, 'k6DJOih8XPP8p64OHyUZ3xdbX6UuMG', 1, '$2y$10$6Jo9gypwzLF5V259pMpNY.WzJQiie3rtj/tbSRR6LWXCF2YVu7INC', 'UTQabTpE0VL8ytiQfYWfjaWWPFLfnNgP6O9GmHYdKu1Dt2sBLIbiF1tjqBZa', '2018-03-11 02:11:44', '2018-03-13 00:58:04');
+INSERT INTO `users` (`id`, `name`, `username`, `email`, `role_id`, `is_activated`, `student_id`, `status`, `link`, `stage`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Md. Morshed Khan Rana', 'ranamim', 'admin@admin.com', 1, 1, '0', 0, NULL, 1, '$2y$10$pz19k.JR7DvkavZgKwSdSuz0E7YWABIddbcCFB0l9PZRXXOmUDu8u', 'xry8GVt9NnkTvvh2f5NKbRhCb58V6YvjUOL0yPwi2zP8HOpDhTalDSvwGgUk', '2018-02-20 09:39:18', '2018-02-20 09:39:18'),
+(2, 'Marilyne White', NULL, 'pagac.treva@example.org', 1, 1, '0', 0, NULL, 1, '$2y$10$XlkoFed4pOxDRuC1bJzKy.UBY5TcHcIX.ggeZZFwUt0wBeAbtt0va', '6MtF4Z8bNc', '2018-02-20 09:39:19', '2018-02-20 09:39:19'),
+(3, 'Mrs. Gina Pfannerstill', NULL, 'walton04@example.com', 1, 1, '0', 0, NULL, 1, '$2y$10$XlkoFed4pOxDRuC1bJzKy.UBY5TcHcIX.ggeZZFwUt0wBeAbtt0va', 'U52OukYvmG', '2018-02-20 09:39:19', '2018-02-20 09:39:19'),
+(4, 'Gloria Hilll', NULL, 'andreanne88@example.net', 1, 1, '0', 0, NULL, 1, '$2y$10$XlkoFed4pOxDRuC1bJzKy.UBY5TcHcIX.ggeZZFwUt0wBeAbtt0va', 'iXwgZ8RZJF', '2018-02-20 09:39:19', '2018-02-20 09:39:19'),
+(5, 'Ajahar Uddin', 'ajahar', 'ajahar@gmail.com', 2, 1, '0', 0, '8zP3jiJQ5JTd3bG5kWm8Pj7pkvbmlx', 1, '$2y$10$o.KKgp.bAfX3Bm/qkx/6ie.bPKPO9yCbWjFQq/CTxnjqekzAmhmSS', 'x1tVZgTHHP0RsF5JPMRB3PF4KVrTqDaIuFn2A4iVtDt1x8VTsQVEhZNaFrjL', '2018-02-20 20:11:42', '2018-03-10 03:36:16'),
+(6, 'Md. Morshed Khan Rana', 'rana0105', 'ra.ranacse@gmail.com', 3, 1, '0', 0, 'ccJBtbFJRMqnICMvp7hPoefk6MmiJ5', 1, '$2y$10$b3U0mb2tF0MHEmPA1mS3FOcZ3gUPWCQh5D81uPnifEZjnNnz6JCa.', 'kJEtSNz3ph5EAZkSylZ1GO4jiZkAmHmkxpzR81LMIJkn0yvd02rr1g9b2IXc', '2018-02-20 20:23:35', '2018-03-13 00:22:01'),
+(7, 'Mahin Uddin', 'mahin', 'mahin@gmail.com', 4, 1, '0', 0, 'Cy70IUMLnSBBnvV650XFWKBgsX5rZG', 1, '$2y$10$HYl92GGvWCu3joX2FKZakOa4j2RoE55j/4mkIumWPImEt5WrzDsJW', NULL, '2018-02-20 20:24:18', '2018-02-20 20:24:18'),
+(8, 'Md. Mahabub-Ul Alam Shamim', 'shamim', 'shamim@gmail.com', 1, 1, '0', 0, NULL, 1, '$2y$10$5T.3tLiebYn7.c/0iOOTE..d/g/hWTOaatLtM5raqY6lzDS9i07pu', NULL, '2018-02-25 23:36:36', '2018-02-25 23:36:36'),
+(9, 'Mahabub Mamun', 'mamun', 'mamun@gmail.com', 2, 1, '0', 0, NULL, 1, '$2y$10$bYcN.p760wPd57sN4vEbYe7zjo2rDPeR3GygRntUFBDJQbSYNocQ.', 'QpaJHj8xYENGqN9uiea2YfVFeia4UJ0uGon3WN08QLr4emyaYC5pTMH1dlyS', '2018-02-25 23:53:33', '2018-03-09 20:41:31'),
+(10, 'Nushrat Faria', 'nushrat', 'nushrat@gmail.com', 2, 1, '0', 0, NULL, 1, '$2y$10$YGIzO5KHQ8bKfwI3J.bRRuQ6VuNIPYN/MBxhS42yzFPAOBHiX1ugy', 'BWD7Zfxga7VmtRGxTKsV0Gy1H0vWPVXRT28dAy5pYybtAp5VV7LyHRPDzgi2', '2018-02-26 00:41:09', '2018-02-26 00:41:09'),
+(11, 'Mashrafee Mortoza Khan', 'mashrafee', 'mashrafee@gmail.com', 3, 1, '0', 0, NULL, 1, '$2y$10$FDDUwOoJu5rrMPS9U1pidumFx8rGc9bvtinejZ2AgE4WH78NJfSRC', 'HnrEHDpQcNK8XZj4cxgVmVh7nUEtgVqNSXmpPQjXkbE2kxfuXaAE74fJEype', '2018-02-26 00:51:15', '2018-03-13 00:57:57'),
+(12, 'Fatema Aka', 'fatema', 'fatema@gmail.com', 2, 1, '0', 0, NULL, 1, '$2y$10$oiCocBzXeH4zDNK8JsB5meuMWeuQFzdrnwWjxU5i9baiqJgfkY9hu', 'pqm3U8OLFDuJBXyql6fLXYtk4kPqQpuLOb6ZAAJToYnKQfTAk4bWjZ1Yo2oT', '2018-03-09 23:18:07', '2018-03-13 00:25:22'),
+(13, 'Mahabub-ul Alam Shamim', 'shamim1', 'shamim1@gmail.com', 3, 1, '0', 0, NULL, 1, '$2y$10$KgmcjQyRsi0uEl2cc96dz.Dji7b/EhFNd/k9VWXdTtq/zvJXOxGuu', '7QJ5t7Gg2W8R8WcZEMbJITyuhff13rLCWxedsX9atqbbXTFZ5ePWSN9c85VP', '2018-03-10 08:17:23', '2018-03-10 08:17:23'),
+(14, 'Aminul Islam', 'aminul', 'aminul@gmail.com', 3, 1, '0', 0, 'k6DJOih8XPP8p64OHyUZ3xdbX6UuMG', 1, '$2y$10$6Jo9gypwzLF5V259pMpNY.WzJQiie3rtj/tbSRR6LWXCF2YVu7INC', 'UTQabTpE0VL8ytiQfYWfjaWWPFLfnNgP6O9GmHYdKu1Dt2sBLIbiF1tjqBZa', '2018-03-11 02:11:44', '2018-03-13 00:58:04'),
+(17, 'Mehedi Hasan', 'mehedi', 'mehedi@gmail.com', 3, 1, 'KKHS18030001', 0, NULL, 0, '$2y$10$fUCb66QPtTyouOwQt99nT.G414FXYRiT9mJk9VVUZ6pyqFaM8D/GW', NULL, '2018-03-18 22:04:16', '2018-03-18 22:04:16'),
+(18, 'Environment', 'likhon1', 'likhon1@lkhon.com', 4, 1, '0', 0, NULL, 0, '$2y$10$6NuydPMIsk61E7gT8q3EQ.OFyerIrU.9yGCree.OSrLAvr4UV/0za', NULL, '2018-03-18 22:06:05', '2018-03-18 22:06:05'),
+(19, 'Environment', 'mamun1', 'mamun1@gmail.com', 2, 1, '0', 0, NULL, 0, '$2y$10$qT5sNqwe7qXAL91HkoB7SeWQdo98kKWhZbMdEb80Ax2ZxOwblAk1q', NULL, '2018-03-18 22:07:46', '2018-03-18 22:07:46'),
+(20, 'Culture', 'culture', 'adminasa@admin.comsas', 3, 0, 'KKHS18030002', 0, 'sXAsSeHgcYuU5dVL8LVYd3UYA3GuPn', 0, '$2y$10$XWqr/yighm6CmpLyiyDFb.hSELKCIWRZu.L/yrv3.UkMKcwzPlefe', NULL, '2018-03-18 22:23:20', '2018-03-18 22:23:20');
 
 -- --------------------------------------------------------
 
@@ -693,7 +728,8 @@ INSERT INTO `user_activations` (`id`, `user_id`, `token`, `created_at`, `updated
 (2, 5, '8zP3jiJQ5JTd3bG5kWm8Pj7pkvbmlx', NULL, NULL),
 (3, 6, 'ccJBtbFJRMqnICMvp7hPoefk6MmiJ5', NULL, NULL),
 (4, 7, 'Cy70IUMLnSBBnvV650XFWKBgsX5rZG', NULL, NULL),
-(5, 14, 'k6DJOih8XPP8p64OHyUZ3xdbX6UuMG', NULL, NULL);
+(5, 14, 'k6DJOih8XPP8p64OHyUZ3xdbX6UuMG', NULL, NULL),
+(6, 20, 'sXAsSeHgcYuU5dVL8LVYd3UYA3GuPn', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -709,6 +745,12 @@ ALTER TABLE `abouts`
 -- Indexes for table `achieves`
 --
 ALTER TABLE `achieves`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `autoids`
+--
+ALTER TABLE `autoids`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -872,6 +914,11 @@ ALTER TABLE `abouts`
 ALTER TABLE `achieves`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `autoids`
+--
+ALTER TABLE `autoids`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `blogcategories`
 --
 ALTER TABLE `blogcategories`
@@ -900,12 +947,12 @@ ALTER TABLE `galleries`
 -- AUTO_INCREMENT for table `gardians`
 --
 ALTER TABLE `gardians`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 --
 -- AUTO_INCREMENT for table `notices`
 --
@@ -940,12 +987,12 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `testmonials`
 --
@@ -955,12 +1002,12 @@ ALTER TABLE `testmonials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `user_activations`
 --
 ALTER TABLE `user_activations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --
