@@ -717,3 +717,7 @@ ul.text-center {
     padding: 5px 5px;
     box-shadow: 4px 2px 5px #e0e4e8;
 }
+
+.event-modal-style p {
+    padding-right: 10px;
+}

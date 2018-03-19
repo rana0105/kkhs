@@ -6,6 +6,6 @@
         <p>{{ $event->location }}</p>
     </div>
 </div>
-<div class="col-md-8">
+<div class="col-md-8 event-modal-style">
     <p style="text-align: justify; margin: 0 10% 0 10%;">{!! $event->description !!}</p>
 </div>

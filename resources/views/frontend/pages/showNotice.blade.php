@@ -17,7 +17,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8" style="padding-top: 25px;">
+          @if(pathinfo($notice->file, PATHINFO_EXTENSION) == 'jpg' || pathinfo($notice->file, PATHINFO_EXTENSION) == 'png' || pathinfo($notice->file, PATHINFO_EXTENSION) == 'jpeg' || pathinfo($notice->file, PATHINFO_EXTENSION) == 'gif')
           <img class="img-fluid rounded" src="{{ asset('uploadfile/images/'. $notice->file) }}" alt="">
+          @else 
+          <a href="{{ asset('uploadfile/images/'. $notice->file) }}">{{ asset('uploadfile/images/'. $notice->file) }}</a>
+          @endif
           <hr>
         </div>
         <div class="col-md-4">
