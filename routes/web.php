@@ -1,5 +1,6 @@
 <?php
 Route::get('/','HomeController@index')->name('home.home');
+Route::get('show/{id}/notice','HomeController@showNotice')->name('show.notices');
 Route::get('/eventShow/{id}','HomeController@eventShow');
 Route::get('about-us','HomeController@getAbout')->name('about-us');
 Route::get('teacher','HomeController@getTeachers')->name('teacher.show');

@@ -579,7 +579,7 @@ ul.porund li {
     background: #ffffff;
     padding: 10px;
     box-shadow: 0px 0px 2px #3c4d61;
-    text-align: center;
+    text-align: left;
 }
 ul.porund li, a {
     color: #3c4d61;

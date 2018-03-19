@@ -63,10 +63,10 @@
                       <div class="new-sound overflow-fix">
                         <ul class="porund">
                             @if(sizeof($notices)>0)
-                            @foreach($notices as $notice)
-                            <li>
+                            @foreach($notices as $key => $notice)
+                            <li class="{{ $key == 0 ? ' active' : '' }}">
                                 <div class="chronology-single-slider overflow-fix">
-                                    <a href="">{{ $notice->title }}</a>
+                                    <p><span><b>Title:</b> <a target="blank" href="{{ route('show.notices', $notice->id) }}">{{ str_limit($notice->title, 20) }}</a></span><span>  &nbsp; <b>Date: {{ date('d-M-Y', strtotime($notice->created_at)) }}</b></span></p>
                                 </div>
                             </li>
                            @endforeach 
@@ -406,47 +406,7 @@
     <!-- //testimonials -->
 @endsection
 @section('script')
-<script type="text/javascript">
-    
-var x = 0,
-    container = $('.porund'),
-    items = container.find('li'),
-    containerHeight = 0,
-    numberVisible = 10,
-    intervalSec = 1000;
-
-if(!container.find('li:first').hasClass("first")){
-  container.find('li:first').addClass("first");
-}
-
-items.each(function(){
-  if(x < numberVisible){
-    containerHeight = containerHeight + $(this).outerHeight();
-    x++;
-  }
-});
-
-container.css({ height: containerHeight, overflow: "hidden" });
-  
-function vertCycle() {
-  var firstItem = container.find('li.first').html();
-    
-  container.append('<li>'+firstItem+'</li>');
-  firstItem = '';
-  container.find('li.first').animate({ marginTop: "-50px" }, 1500, function(){  $(this).remove(); container.find('li:first').addClass("first"); });
-}
-
-if(intervalSec < 700){
-  intervalSec = 700;
-}
-
-var init = setInterval("vertCycle()",intervalSec);
-
-container.hover(function(){
-  clearInterval(init);
-}, function(){
-  init = setInterval("vertCycle()",intervalSec);
-});  
+<script type="text/javascript"> 
 $(document).on('click', '.eventShow', function() {
      var id = $(this).attr('data-id');
        $.get('/eventShow/'+id, function(data){

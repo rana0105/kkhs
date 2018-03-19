@@ -20,7 +20,7 @@
         <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
             <a class="thumbnail fancybox" rel="ligthbox" href="{{ asset('uploadfile/images/'. $gallery->image) }}">
                 <img class="img-responsive image_gallery_box" alt="" src="{{ asset('uploadfile/images/'. $gallery->image) }}" />
-                <div class='text-right'>
+                <div class='text-center'>
                     <small class='text-muted'>{{$gallery->title}}</small>
                 </div> 
             </a>

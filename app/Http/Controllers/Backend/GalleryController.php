@@ -31,7 +31,6 @@ class GalleryController extends Controller
             'image'        => 'required|image|min:3|max:2048'
         ]);
         $images = $request->file('image');
-        dd($images);
         $filename = rand(10,100) . time().'.'.$images->getClientOriginalExtension();
         $location = 'uploadfile/images/'. $filename;
         Image::make($images)->resize(600 , 600)->save($location);
@@ -59,7 +58,6 @@ class GalleryController extends Controller
     public function update(Request $request, $id)
     {
         $images = $request->file('image');
-        dd($images);
         $gallery = Gallery::find($id);
         if($images != null){
             $filename = rand(10,100) . time().'.'.$images->getClientOriginalExtension();

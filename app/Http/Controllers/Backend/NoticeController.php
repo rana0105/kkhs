@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Model\Backend\Notice;
 use Illuminate\Http\Request;
+use Storage;
 
 class NoticeController extends Controller
 {
@@ -47,12 +48,26 @@ class NoticeController extends Controller
 
     public function edit($id)
     {
-        //
+        $notice = Notice::find($id);
+        return view('backend.notice.edit', compact('notice'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $files = $request->file('file');
+        $notice = Notice::find($id);
+        if($files != null){
+            $filename = rand(10,100) . time() . '.' . $files->getClientOriginalExtension();
+            $destinationPath = 'uploadfile/images/';
+            $files->move($destinationPath, $filename);
+            $oldFilename = $notice->file;
+            $notice->file = $filename;
+            Storage::delete($oldFilename);
+        }else{
+            $notice->update($request->except('file'));
+        }
+        $notice->update($request->except('file'));
+        return redirect()->route('notices.index')->with('success', 'Notice have been upadated successfully !');
     }
 
     public function destroy($id)

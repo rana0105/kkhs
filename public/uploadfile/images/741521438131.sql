@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 19, 2018 at 07:41 AM
+-- Generation Time: Mar 19, 2018 at 05:09 AM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
 -- PHP Version: 7.0.25-0ubuntu0.16.04.1
 
@@ -359,13 +359,7 @@ CREATE TABLE `notices` (
 --
 
 INSERT INTO `notices` (`id`, `title`, `description`, `file`, `created_at`, `updated_at`) VALUES
-(5, 'jQuery: table paginationdsds', '<p>eewer br vrereredssds</p>', '341521438199.sql', '2018-03-09 00:02:50', '2018-03-18 23:43:19'),
-(6, 'Health News for Managed Care Organizations', '<p>Health News for Managed Care Organizations</p>', '591521438254.html', '2018-03-18 23:44:14', '2018-03-18 23:44:14'),
-(7, 'Why do we use it?', '<p>Health News for Managed Care Organizations</p>', '741521438280.png', '2018-03-18 23:44:40', '2018-03-18 23:44:40'),
-(8, 'Where can I get some?', '<p>Where can I get some?</p>', '391521438315.png', '2018-03-18 23:45:15', '2018-03-18 23:45:15'),
-(9, 'Why do we use it? sdsds', '<p>Why do we use it? sdsds</p>', '101521438338.png', '2018-03-18 23:45:38', '2018-03-18 23:45:38'),
-(10, 'Put HealthDay to Work for You', '<p>Put HealthDay to Work for You</p>', '771521438357.png', '2018-03-18 23:45:57', '2018-03-18 23:45:57'),
-(11, 'Health News for Managed', '<p>Health News for Managed&nbsp;</p>', '361521438382.png', '2018-03-18 23:46:22', '2018-03-18 23:46:22');
+(5, 'jQuery: table pagination', '<p>eewer br vrerere</p>', '641520575370.txt', '2018-03-09 00:02:50', '2018-03-09 00:02:50');
 
 -- --------------------------------------------------------
 
@@ -923,7 +917,7 @@ ALTER TABLE `achieves`
 -- AUTO_INCREMENT for table `autoids`
 --
 ALTER TABLE `autoids`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `blogcategories`
 --
@@ -963,7 +957,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `notices`
 --
 ALTER TABLE `notices`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `permissions`
 --

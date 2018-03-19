@@ -13,7 +13,7 @@
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
                         <li><a href="{{url('/dashboard')}}">Dashboard</a></li>
-                        <li><a href="{{route('galleries.index')}}">Gallery</a></li>
+                        <li><a href="{{route('notices.index')}}">Notice</a></li>
                         <li class="active">Edit</li>
                     </ol>
                 </div>
@@ -29,25 +29,25 @@
                             <strong class="card-title">Edit</strong>
                         </div>
                         <div class="card-body">
-                          {!! Form::open(['route' => ['galleries.update', $gallery->id ], 'method' => 'PUT', 'enctype'=>'multipart/form-data', 'file'=>'true' ])!!}
+                          {!! Form::open(['route' => ['notices.update', $notice->id ], 'method' => 'PUT', 'enctype'=>'multipart/form-data', 'file'=>'true' ])!!}
                             {{csrf_field()}}
                             <div class="form-group row">
                               <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
                               <div class="col-sm-8">
-                                <input type="text" name="title" class="form-control" id="inputTitle" value="{{ $gallery->title }}">
+                                <input type="text" name="title" class="form-control" id="inputTitle" value="{{ $notice->title }}">
                               </div>
                             </div>
                             <div class="form-group row">
                               <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
                               <div class="col-sm-8">
-                                <textarea name="description" id="inputDescription" cols="30" class="form-control" rows="5">{{ $gallery->description }}</textarea>
+                                <textarea name="description" id="inputDescription" cols="30" class="form-control" rows="5">{{ $notice->description }}</textarea>
                               </div>
                             </div>
                             <div class="form-group row">
                               <label for="inputTitle" class="col-sm-2 col-form-label">Image</label>
                               <div class="col-sm-8">
-                                <input type="file" name="image" class="form-control" id="inputImage">
-                                <img class="img img-thumbnail" style="margin-top: 3px;" src="{{ asset('uploadfile/images/'. $gallery->image) }}" alt="{{ $gallery->image }}" width="50" height="50">
+                                <input type="file" name="file" class="form-control" id="inputImage">
+                                <img class="img img-thumbnail" style="margin-top: 3px;" src="{{ asset('uploadfile/images/'. $notice->file) }}" alt="{{ $notice->file }}" width="50" height="50">
                               </div>
                             </div>
                             <div class="form-group row">
