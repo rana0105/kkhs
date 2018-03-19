@@ -19,19 +19,19 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Component</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{route('about.index')}}">About Us</a></li>
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{route('achieve.index')}}">Achieve</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('current-teacher.index')}}">Current Teacher</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('ex-teacher.index')}}">Ex Teacher</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('current-student.index')}}">Current Student</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('ex-student.index')}}">Ex Student</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('galleries.index')}}">Gallery</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('slider.index')}}">Slider</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('notices.index')}}">Notice</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('event.index')}}">Event</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('blog-category.index')}}">Blog Category</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('blogs.index')}}">Blog</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('testmonials.index')}}">Testmonial</a></li>
+                            <li><i class="fa fa-home"></i><a href="{{route('about.index')}}">About Us</a></li>
+                            <li><i class="fa fa-trophy"></i><a href="{{route('achieve.index')}}">Achieve</a></li>
+                            <li><i class="fa fa-user"></i><a href="{{route('current-teacher.index')}}">Current Teacher</a></li>
+                            <li><i class="fa fa-user"></i><a href="{{route('ex-teacher.index')}}">Ex Teacher</a></li>
+                            <li><i class="fa fa-user"></i><a href="{{route('current-student.index')}}">Current Student</a></li>
+                            <li><i class="fa fa-user"></i><a href="{{route('ex-student.index')}}">Ex Student</a></li>
+                            <li><i class="fa fa-image"></i><a href="{{route('galleries.index')}}">Gallery</a></li>
+                            <li><i class="fa fa-image"></i><a href="{{route('slider.index')}}">Slider</a></li>
+                            <li><i class="fa fa-envelope"></i><a href="{{route('notices.index')}}">Notice</a></li>
+                            <li><i class="fa fa-envelope"></i><a href="{{route('event.index')}}">Event</a></li>
+                            <li><i class="fa fa-cog"></i><a href="{{route('blog-category.index')}}">Blog Category</a></li>
+                            <li><i class="fa fa-rss"></i><a href="{{route('blogs.index')}}">Blog</a></li>
+                            <li><i class="fa fa-comments"></i><a href="{{route('testmonials.index')}}">Testmonial</a></li>
                         </ul>
                     </li>
 

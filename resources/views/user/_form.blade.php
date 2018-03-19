@@ -29,6 +29,12 @@
     <input type="hidden" name="is_activated" value="1">
 </div>
 
+<div class="form-group @if ($errors->has('student_id')) has-error @endif">
+    {!! Form::label('student_id', '*Only for Student Id') !!}
+    <input id="studentId" type="text" name="student_id" readonly="" class="form-control" required="">
+    @if ($errors->has('password')) <p class="help-block">{{ $errors->first('password') }}</p> @endif
+</div>
+
 <!-- Roles Form Input -->
 <div class="form-group @if ($errors->has('roles')) has-error @endif">
     {!! Form::label('roles', 'Roles') !!}

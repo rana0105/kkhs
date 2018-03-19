@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Authorizable;
+use App\Model\Backend\Autoid;
 use App\Model\Backend\Gardian;
 use App\Model\Backend\Student;
 use App\Model\Backend\Teacher;
@@ -37,8 +38,8 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::pluck('name', 'id');
-
-        return view('user.new', compact('roles'));
+        $autoid = Autoid::find('1');
+        return view('user.new', compact('roles', 'autoid'));
     }
 
     /**
@@ -61,7 +62,7 @@ class UserController extends Controller
         $request->merge(['password' => bcrypt($request->get('password'))]);
 
         // Create the user
-        if ( $user = User::create($request->except('roles', 'permissions')+['role_id' => $request->roles]) ) {
+        if ( $user = User::create($request->except('roles', 'permissions', 'student_id')+['role_id' => $request->roles]) ) {
             if($user->role_id == 2){
                 $teacher = new Teacher;
                 $teacher->user_id = $user->id;
@@ -73,6 +74,8 @@ class UserController extends Controller
                 $student = new Student;
                 $student->user_id = $user->id;
                 $student->save();
+                $user->update(['student_id' => $request->student_id]);
+                Autoid::find(1)->increment('auto_id');
                 $this->syncPermissions($request, $user);
                 flash('User has been created.');
                 return redirect()->route('students.index');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Model\Backend\Autoid;
 use App\Model\Backend\Gardian;
 use App\Model\Backend\Student;
 use App\Model\Backend\Teacher;
@@ -48,7 +49,8 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        return view('auth.register');
+        $autoid = Autoid::find(1);
+        return view('auth.register', compact('autoid'));
     }
 
     /**
@@ -85,6 +87,8 @@ class RegisterController extends Controller
                 $student = new Student;
                 $student->user_id = $user->id;
                 $student->save();
+                $user->update(['student_id' => $request->student_id]);
+                Autoid::find(1)->increment('auto_id');
             }elseif ($user->role_id == 4) {
                 $gardian = new Gardian;
                 $gardian->user_id = $user->id;

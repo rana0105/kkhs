@@ -20,10 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->integer('role_id')->nullable();
             $table->boolean('is_activated')->default(0);
-            $table->boolean('s_status')->default(0);
-            $table->boolean('t_status')->default(0);
-            $table->boolean('p_status')->default(0);
+            $table->integer('student_id',15)->default(0);
+            $table->boolean('status')->default(0);
             $table->string('link')->nullable();
+            $table->boolean('stage')->default(0);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

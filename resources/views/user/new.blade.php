@@ -41,3 +41,25 @@
     </div>
 </div>
 @endsection
+@section('script')
+
+<script type="text/javascript">
+  function getDate()
+  {
+    var kk = 'KKHS';
+    var auto = {{ $autoid->auto_id }}+1;
+    var str = "" + auto;
+    var pad = "0000";
+    var ans = pad.substring(0, pad.length - str.length) + str;
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+    var yy = yyyy.toString().substr(-2);
+    if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm}
+    today = kk+""+yy+""+mm+""+ans;
+    document.getElementById("studentId").value = today;
+  } 
+  getDate();
+</script>
+@endsection
