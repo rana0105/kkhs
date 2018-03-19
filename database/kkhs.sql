@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.6.4deb1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Mar 19, 2018 at 07:41 AM
--- Server version: 5.7.21-0ubuntu0.16.04.1
--- PHP Version: 7.0.25-0ubuntu0.16.04.1
+-- Host: localhost:3306
+-- Generation Time: Mar 19, 2018 at 10:02 PM
+-- Server version: 5.7.18-0ubuntu0.16.10.1
+-- PHP Version: 7.0.18-0ubuntu0.16.10.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -84,7 +84,7 @@ CREATE TABLE `autoids` (
 --
 
 INSERT INTO `autoids` (`id`, `auto_id`, `created_at`, `updated_at`) VALUES
-(1, 2, NULL, '2018-03-18 22:23:20');
+(1, 4, NULL, '2018-03-19 09:51:33');
 
 -- --------------------------------------------------------
 
@@ -129,16 +129,6 @@ CREATE TABLE `blogs` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `blogs`
---
-
-INSERT INTO `blogs` (`id`, `user_id`, `blogcategories_id`, `title`, `description`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 3, 'IT’S SIMPLE… GUARANTEED FOR LIFE!', '<p><span style="color: #292b2c; font-family: -apple-system, system-ui, BlinkMacSystemFont, \'Segoe UI\', Roboto, \'Helvetica Neue\', Arial, sans-serif; font-size: 16px; background-color: #f2f3f5;">Livewire cables are guaranteed to be free from defects in workmanship and materials for life. If the cable should ever fail, simply return to an authorized dealer for repair or replacement. Retailer and manufacturer shall not be liable for damages based upon inconvenience, loss of use of the cable, loss of time, interrupted operation or commercial loss or any other incidental or consequential damages. This guarantee gives you specific legal rights: you may have other legal rights which vary from state to state.</span></p>', '971520331124.jpeg', 1, '2018-03-06 03:02:24', '2018-03-06 22:09:09'),
-(2, 11, 3, 'What is Lorem Ipsum?', '<p><strong style="margin: 0px; padding: 0px; font-family: \'Open Sans\', Arial, sans-serif; text-align: justify;">Lorem Ipsum</strong><span style="font-family: \'Open Sans\', Arial, sans-serif; text-align: justify;"> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span></p>', '171520394538.jpeg', 1, '2018-03-06 21:48:58', '2018-03-06 22:09:03'),
-(3, 6, 5, 'Why do we use it?', '<p><span style="font-family: \'Open Sans\', Arial, sans-serif; text-align: justify;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span></p>', '591520397901.jpg', 1, '2018-03-06 22:45:01', '2018-03-06 22:46:05'),
-(4, 10, 2, '22 Tips For Creating Great Content', '<p><span style="color: #3d466e; font-family: \'Droid Sans\', Helvetica, Arial, sans-serif;">One of the challenges you have as a content marketer is continually creating new content. You likely don’t have the luxury of running a content site like Huffington Post or Buzzfeed, where you’re free to write anything from cat memes to particle physics. You’re a content marketer, and you need to produce content that your audience (and customers) would search for and enjoy. You have to stay disciplined in your content, as you can only stay within a certain range of topics.</span></p>', '771520652055.jpg', 1, '2018-03-09 21:20:55', '2018-03-09 21:23:50');
-
 -- --------------------------------------------------------
 
 --
@@ -162,13 +152,6 @@ CREATE TABLE `current_students` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `current_students`
---
-
-INSERT INTO `current_students` (`id`, `user_id`, `student_class`, `student_section`, `student_department`, `student_phone`, `student_father_name`, `student_mother_name`, `student_parent_phone`, `student_address`, `social_link`, `student_remark`, `student_image`, `created_at`, `updated_at`) VALUES
-(1, 11, '4', '0', '0', '01770817584', 'Md. Belal Hosen', 'Mst. Moriom Bibi', '01770817584', 'Chalkgopal, Manda, Naogaon', 'https://www.facebook.com/LikeMashrafee/', '<p>Porasuna korena</p>', '271520836824.jpg', '2018-03-12 00:40:24', '2018-03-12 22:59:12');
 
 -- --------------------------------------------------------
 
@@ -198,9 +181,10 @@ CREATE TABLE `ex_students` (
 --
 
 INSERT INTO `ex_students` (`id`, `user_id`, `ex_student_phone`, `ex_student_education`, `ex_student_education_institution`, `ex_student_profession`, `ex_student_designation`, `ex_student_profession_institute`, `ex_student_address`, `ex_student_passing_year`, `social_link`, `ex_student_image`, `created_at`, `updated_at`) VALUES
-(1, 6, '01720292408', 'Bsc in CSE', 'UITS', 'IT Service', 'Software Developer', 'SparkBit', 'Chalkgopal, Manda, Naogoan', '2003-05-07', 'https://www.facebook.com/rana0105cse/,https://twitter.com/rana0105cse/,https://www.linkedin.com/in/rana0105cse/', '301520697769.jpg', '2018-03-04 20:47:36', '2018-03-10 10:02:49'),
-(2, 13, '01798312591', 'Msc in Biotechnology', 'Bangladesh Agricultural University', 'N/A', 'N/A', 'N/A', 'Chalkgopal, Manda, Naogoan', '2008-04-09', 'https://www.facebook.com/mahabubulalam.shamim/', '591520696029.jpg', '2018-03-10 09:29:55', '2018-03-10 09:33:49'),
-(3, 14, '01734701530', 'MA in Economics', 'Dhaka College', 'Marketing', 'Marketing Executive', 'Mondol Group', 'Chalkgopal, Manda, Naogaon', '2004-05-04', 'https://www.facebook.com/', '151520834067.jpg', '2018-03-11 23:54:27', '2018-03-11 23:54:27');
+(1, 5, '01720292408', 'Bsc in Computer Science & Engineering', 'University of Information Technology & Sciences', 'IT Service', 'Software Developer', 'SparkBit', 'Chalkgopal, Manda, Naogaon', '2003-05-01', 'https://www.facebook.com/Rana0105CSE/,https://twitter.com/Rana0105CSE/,https://www.linkedin.com/in/rana0105cse/', '361521472301.jpg', '2018-03-19 09:11:41', '2018-03-19 09:11:41'),
+(2, 6, '01798312591', 'Msc in Biotechnology, Bsc in Genetic Engineering &  Biotechnology', 'Bangladesh Agricultural University & JUST', 'N/A', 'N/A', 'N/A', 'Chalkgopal, Manda, Naogaon', '2008-05-05', 'https://www.facebook.com/mahabubulalam.shamim/,https://twitter.com/,https://www.linkedin.com/', '411521473454.jpg', '2018-03-19 09:30:54', '2018-03-19 09:30:54'),
+(3, 7, '01734701530', 'MA Economics', 'Dhaka College', 'Marketing Executive', 'Marketing Executive', 'Montrims Ltd.  Mondol Group', 'Chalkgopal, Manda, Naogaon', '2004-05-01', 'https://www.facebook.com/profile.php?id=100005018282038,https://twitter.com/,https://www.linkedin.com/', '421521474081.jpg', '2018-03-19 09:41:21', '2018-03-19 09:41:21'),
+(4, 8, '01725455699', 'Msc in Mathematics', 'Rajshahi College', 'Teaching', 'Lecturer', 'Chakuli Degree College', 'Gaihana, Manda, Naogaon', '2003-05-01', 'https://www.facebook.com/jewel.rakibul/,https://twitter.com/,https://www.linkedin.com/', '581521475058.jpg', '2018-03-19 09:57:39', '2018-03-19 09:57:39');
 
 -- --------------------------------------------------------
 
@@ -245,14 +229,6 @@ CREATE TABLE `gardians` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `gardians`
---
-
-INSERT INTO `gardians` (`id`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 7, '2018-02-20 20:24:18', '2018-02-20 20:24:18'),
-(2, 18, '2018-03-18 22:06:05', '2018-03-18 22:06:05');
 
 -- --------------------------------------------------------
 
@@ -321,13 +297,13 @@ CREATE TABLE `model_has_roles` (
 
 INSERT INTO `model_has_roles` (`role_id`, `model_id`, `model_type`) VALUES
 (1, 1, 'App\\User'),
-(2, 2, 'App\\User'),
-(3, 3, 'App\\User'),
-(4, 4, 'App\\User'),
-(2, 5, 'App\\User'),
+(1, 2, 'App\\User'),
+(1, 3, 'App\\User'),
+(1, 4, 'App\\User'),
+(3, 5, 'App\\User'),
 (3, 6, 'App\\User'),
-(4, 7, 'App\\User'),
-(1, 8, 'App\\User'),
+(3, 7, 'App\\User'),
+(3, 8, 'App\\User'),
 (2, 9, 'App\\User'),
 (2, 10, 'App\\User'),
 (3, 11, 'App\\User'),
@@ -520,15 +496,7 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (1, 1),
 (2, 1),
 (3, 1),
-(4, 1),
-(5, 1),
-(6, 1),
-(7, 1),
-(8, 1),
-(9, 1),
-(10, 1),
-(11, 1),
-(12, 1);
+(4, 1);
 
 -- --------------------------------------------------------
 
@@ -602,12 +570,10 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `user_id`, `student_status`, `created_at`, `updated_at`) VALUES
-(1, 6, 2, '2018-02-20 20:23:35', '2018-03-13 00:22:00'),
-(2, 11, 1, '2018-02-26 00:51:15', '2018-03-13 00:57:57'),
-(3, 13, 2, '2018-03-10 08:17:23', '2018-03-10 09:22:49'),
-(4, 14, 2, '2018-03-11 02:11:44', '2018-03-13 00:58:04'),
-(7, 17, 0, '2018-03-18 22:04:16', '2018-03-18 22:04:16'),
-(8, 20, 0, '2018-03-18 22:23:20', '2018-03-18 22:23:20');
+(1, 5, 2, '2018-03-19 08:52:46', '2018-03-19 09:02:18'),
+(2, 6, 2, '2018-03-19 09:26:40', '2018-03-19 09:26:53'),
+(3, 7, 2, '2018-03-19 09:35:55', '2018-03-19 09:36:05'),
+(4, 8, 2, '2018-03-19 09:51:33', '2018-03-19 09:51:42');
 
 -- --------------------------------------------------------
 
@@ -630,17 +596,6 @@ CREATE TABLE `teachers` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `teachers`
---
-
-INSERT INTO `teachers` (`id`, `user_id`, `teacher_phone`, `teacher_education`, `teacher_desingnation`, `teacher_institute`, `teacher_address`, `social_link`, `teacher_image`, `teacher_status`, `created_at`, `updated_at`) VALUES
-(1, 5, '01923883090', 'Msc in Geology and Mining', 'Principle', 'Kayapara Kamarkuri High School', 'Prosadpur, Manda, Naogaon', 'https://www.facebook.com/,https://twitter.com/,https://www.linkedin.com/', '501520648823.jpg', 1, '2018-02-20 20:11:43', '2018-03-10 03:42:19'),
-(2, 9, '32136463', 'diyrtrr', 'fdeet55', 'rtrtyyiuii', 'ruyi564565hjh', 'https://www.facebook.com/,https://twitter.com/,https://www.linkedin.com/', '461520649172.jpeg', 2, '2018-02-25 23:53:34', '2018-03-10 00:28:05'),
-(3, 10, '31364645', 'dfutyer', 'uyuyuyrt', 'r3445rtrr', 'ereyuyu', 'https://www.facebook.com/rana0105cse/,https://twitter.com/rana0105cse/,https://www.linkedin.com/in/rana0105cse/', '811520649946.jpg', 1, '2018-02-26 00:41:09', '2018-03-09 20:45:46'),
-(4, 12, '2146342', 'IT', 'Assistant Teacher', 'KKHS', 'Manda', 'https://www.facebook.com/,https://twitter.com/,https://www.linkedin.com/', '701520659319.jpg', 2, '2018-03-09 23:18:07', '2018-03-13 00:25:21'),
-(5, 19, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-03-18 22:07:46', '2018-03-18 22:07:46');
-
 -- --------------------------------------------------------
 
 --
@@ -662,8 +617,7 @@ CREATE TABLE `testmonials` (
 --
 
 INSERT INTO `testmonials` (`id`, `user_id`, `title`, `description`, `status`, `created_at`, `updated_at`) VALUES
-(2, 11, 'Put HealthDay to Work for You', '<p style="text-align: justify;">Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n<p style="text-align: justify; padding-left: 30px;">&nbsp;</p>', 1, '2018-03-07 00:35:49', '2018-03-07 03:40:13'),
-(5, 6, 'Why do we use it?', '<p style="text-align: justify;"><span style="font-family: \'Open Sans\', Arial, sans-serif; text-align: justify;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span></p>', 1, '2018-03-07 02:11:42', '2018-03-07 03:40:56');
+(1, 5, 'Why choose school', '<p style="margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>\r\n<p>&nbsp;</p>', 1, '2018-03-19 09:13:23', '2018-03-19 09:14:29');
 
 -- --------------------------------------------------------
 
@@ -678,7 +632,7 @@ CREATE TABLE `users` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `role_id` int(11) DEFAULT NULL,
   `is_activated` tinyint(4) DEFAULT '0',
-  `student_id` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `student_id` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT '0',
   `status` tinyint(4) NOT NULL DEFAULT '0',
   `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `stage` tinyint(4) NOT NULL DEFAULT '0',
@@ -694,23 +648,13 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `role_id`, `is_activated`, `student_id`, `status`, `link`, `stage`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Md. Morshed Khan Rana', 'ranamim', 'admin@admin.com', 1, 1, '0', 0, NULL, 1, '$2y$10$pz19k.JR7DvkavZgKwSdSuz0E7YWABIddbcCFB0l9PZRXXOmUDu8u', 'xry8GVt9NnkTvvh2f5NKbRhCb58V6YvjUOL0yPwi2zP8HOpDhTalDSvwGgUk', '2018-02-20 09:39:18', '2018-02-20 09:39:18'),
-(2, 'Marilyne White', NULL, 'pagac.treva@example.org', 1, 1, '0', 0, NULL, 1, '$2y$10$XlkoFed4pOxDRuC1bJzKy.UBY5TcHcIX.ggeZZFwUt0wBeAbtt0va', '6MtF4Z8bNc', '2018-02-20 09:39:19', '2018-02-20 09:39:19'),
-(3, 'Mrs. Gina Pfannerstill', NULL, 'walton04@example.com', 1, 1, '0', 0, NULL, 1, '$2y$10$XlkoFed4pOxDRuC1bJzKy.UBY5TcHcIX.ggeZZFwUt0wBeAbtt0va', 'U52OukYvmG', '2018-02-20 09:39:19', '2018-02-20 09:39:19'),
-(4, 'Gloria Hilll', NULL, 'andreanne88@example.net', 1, 1, '0', 0, NULL, 1, '$2y$10$XlkoFed4pOxDRuC1bJzKy.UBY5TcHcIX.ggeZZFwUt0wBeAbtt0va', 'iXwgZ8RZJF', '2018-02-20 09:39:19', '2018-02-20 09:39:19'),
-(5, 'Ajahar Uddin', 'ajahar', 'ajahar@gmail.com', 2, 1, '0', 0, '8zP3jiJQ5JTd3bG5kWm8Pj7pkvbmlx', 1, '$2y$10$o.KKgp.bAfX3Bm/qkx/6ie.bPKPO9yCbWjFQq/CTxnjqekzAmhmSS', 'x1tVZgTHHP0RsF5JPMRB3PF4KVrTqDaIuFn2A4iVtDt1x8VTsQVEhZNaFrjL', '2018-02-20 20:11:42', '2018-03-10 03:36:16'),
-(6, 'Md. Morshed Khan Rana', 'rana0105', 'ra.ranacse@gmail.com', 3, 1, '0', 0, 'ccJBtbFJRMqnICMvp7hPoefk6MmiJ5', 1, '$2y$10$b3U0mb2tF0MHEmPA1mS3FOcZ3gUPWCQh5D81uPnifEZjnNnz6JCa.', 'kJEtSNz3ph5EAZkSylZ1GO4jiZkAmHmkxpzR81LMIJkn0yvd02rr1g9b2IXc', '2018-02-20 20:23:35', '2018-03-13 00:22:01'),
-(7, 'Mahin Uddin', 'mahin', 'mahin@gmail.com', 4, 1, '0', 0, 'Cy70IUMLnSBBnvV650XFWKBgsX5rZG', 1, '$2y$10$HYl92GGvWCu3joX2FKZakOa4j2RoE55j/4mkIumWPImEt5WrzDsJW', NULL, '2018-02-20 20:24:18', '2018-02-20 20:24:18'),
-(8, 'Md. Mahabub-Ul Alam Shamim', 'shamim', 'shamim@gmail.com', 1, 1, '0', 0, NULL, 1, '$2y$10$5T.3tLiebYn7.c/0iOOTE..d/g/hWTOaatLtM5raqY6lzDS9i07pu', NULL, '2018-02-25 23:36:36', '2018-02-25 23:36:36'),
-(9, 'Mahabub Mamun', 'mamun', 'mamun@gmail.com', 2, 1, '0', 0, NULL, 1, '$2y$10$bYcN.p760wPd57sN4vEbYe7zjo2rDPeR3GygRntUFBDJQbSYNocQ.', 'QpaJHj8xYENGqN9uiea2YfVFeia4UJ0uGon3WN08QLr4emyaYC5pTMH1dlyS', '2018-02-25 23:53:33', '2018-03-09 20:41:31'),
-(10, 'Nushrat Faria', 'nushrat', 'nushrat@gmail.com', 2, 1, '0', 0, NULL, 1, '$2y$10$YGIzO5KHQ8bKfwI3J.bRRuQ6VuNIPYN/MBxhS42yzFPAOBHiX1ugy', 'BWD7Zfxga7VmtRGxTKsV0Gy1H0vWPVXRT28dAy5pYybtAp5VV7LyHRPDzgi2', '2018-02-26 00:41:09', '2018-02-26 00:41:09'),
-(11, 'Mashrafee Mortoza Khan', 'mashrafee', 'mashrafee@gmail.com', 3, 1, '0', 0, NULL, 1, '$2y$10$FDDUwOoJu5rrMPS9U1pidumFx8rGc9bvtinejZ2AgE4WH78NJfSRC', 'HnrEHDpQcNK8XZj4cxgVmVh7nUEtgVqNSXmpPQjXkbE2kxfuXaAE74fJEype', '2018-02-26 00:51:15', '2018-03-13 00:57:57'),
-(12, 'Fatema Aka', 'fatema', 'fatema@gmail.com', 2, 1, '0', 0, NULL, 1, '$2y$10$oiCocBzXeH4zDNK8JsB5meuMWeuQFzdrnwWjxU5i9baiqJgfkY9hu', 'pqm3U8OLFDuJBXyql6fLXYtk4kPqQpuLOb6ZAAJToYnKQfTAk4bWjZ1Yo2oT', '2018-03-09 23:18:07', '2018-03-13 00:25:22'),
-(13, 'Mahabub-ul Alam Shamim', 'shamim1', 'shamim1@gmail.com', 3, 1, '0', 0, NULL, 1, '$2y$10$KgmcjQyRsi0uEl2cc96dz.Dji7b/EhFNd/k9VWXdTtq/zvJXOxGuu', '7QJ5t7Gg2W8R8WcZEMbJITyuhff13rLCWxedsX9atqbbXTFZ5ePWSN9c85VP', '2018-03-10 08:17:23', '2018-03-10 08:17:23'),
-(14, 'Aminul Islam', 'aminul', 'aminul@gmail.com', 3, 1, '0', 0, 'k6DJOih8XPP8p64OHyUZ3xdbX6UuMG', 1, '$2y$10$6Jo9gypwzLF5V259pMpNY.WzJQiie3rtj/tbSRR6LWXCF2YVu7INC', 'UTQabTpE0VL8ytiQfYWfjaWWPFLfnNgP6O9GmHYdKu1Dt2sBLIbiF1tjqBZa', '2018-03-11 02:11:44', '2018-03-13 00:58:04'),
-(17, 'Mehedi Hasan', 'mehedi', 'mehedi@gmail.com', 3, 1, 'KKHS18030001', 0, NULL, 0, '$2y$10$fUCb66QPtTyouOwQt99nT.G414FXYRiT9mJk9VVUZ6pyqFaM8D/GW', NULL, '2018-03-18 22:04:16', '2018-03-18 22:04:16'),
-(18, 'Environment', 'likhon1', 'likhon1@lkhon.com', 4, 1, '0', 0, NULL, 0, '$2y$10$6NuydPMIsk61E7gT8q3EQ.OFyerIrU.9yGCree.OSrLAvr4UV/0za', NULL, '2018-03-18 22:06:05', '2018-03-18 22:06:05'),
-(19, 'Environment', 'mamun1', 'mamun1@gmail.com', 2, 1, '0', 0, NULL, 0, '$2y$10$qT5sNqwe7qXAL91HkoB7SeWQdo98kKWhZbMdEb80Ax2ZxOwblAk1q', NULL, '2018-03-18 22:07:46', '2018-03-18 22:07:46'),
-(20, 'Culture', 'culture', 'adminasa@admin.comsas', 3, 0, 'KKHS18030002', 0, 'sXAsSeHgcYuU5dVL8LVYd3UYA3GuPn', 0, '$2y$10$XWqr/yighm6CmpLyiyDFb.hSELKCIWRZu.L/yrv3.UkMKcwzPlefe', NULL, '2018-03-18 22:23:20', '2018-03-18 22:23:20');
+(2, 'Abdul Jobbar', 'admin3', 'admin3@admin.com', 1, 1, NULL, 0, NULL, 1, '$2y$10$MCO/l4R3m18RkUrTAFD19egKf2o697vcvhC56684.lxm8FiIYoZgy', '6MtF4Z8bNc', '2018-02-20 09:39:19', '2018-03-19 09:21:47'),
+(3, 'Aminul Islam', 'admin2', 'admin2@admin.com', 1, 1, NULL, 0, NULL, 1, '$2y$10$aZyhpxBo9gQfXR/6ScDozuZikX6wGW2Qr9Z4YaH2OVl4WdHlsOBYW', 'U52OukYvmG', '2018-02-20 09:39:19', '2018-03-19 09:21:12'),
+(4, 'Mahabub-Ul Shamim', 'admin1', 'admin1@admin.com', 1, 1, NULL, 0, NULL, 1, '$2y$10$9g70WQlsLK5DOlz1GQJUkub345hA8MaG2P3icGZftsocQqy8jVCnu', 'iXwgZ8RZJF', '2018-02-20 09:39:19', '2018-03-19 09:20:01'),
+(5, 'Md. Morshed Khan Rana', 'rana0105', 'ra.ranacse@gmail.com', 3, 1, 'KKHS18030001', 2, 'GFfQEVuzqXWfVPQ4h4a62z7xiEnWbW', 1, '$2y$10$tCB0dA29frx0fPeoUYmz2eZn0WlaVA4XC92s6Zt/AWokFRL6yr1yq', 'dCnyZ9RYmACmcntbKOA72pe0AejN1NXrX5DVKYUpAFHH8A4UgLZ15vtCySLj', '2018-03-19 08:52:46', '2018-03-19 09:02:18'),
+(6, 'Mahabub-ul Alam Shamim', 'shamim', 'shamim@gmail.com', 3, 1, 'KKHS18030002', 2, NULL, 1, '$2y$10$btQQTO247.gZY2jdF3994ueDphqYDTLBZWrnTco50LFcOYGWzR/ZW', 'sxTlLmesz49WbUe2KHwbLKk7GnvRxsYEBN48oOwr0JDdY4E1sEKCt69cZdDm', '2018-03-19 09:26:40', '2018-03-19 09:26:54'),
+(7, 'Aminul Islam', 'aminul', 'aminul@gmail.com', 3, 1, 'KKHS18030003', 2, NULL, 1, '$2y$10$VP39CoBgofwrrzEYuORsPey8n5DPLjVSWCV3BHovOz0BDmWFYsrZ6', '2NrW6aIuFRa9H6EYvMsLIOYF3IgVZb2ehRX2jWw2KSs8XaXzLpFEoFkbmsIT', '2018-03-19 09:35:55', '2018-03-19 09:36:05'),
+(8, 'Rokibul Hasan', 'rokibul', 'rokibul@gmail.com', 3, 1, 'KKHS18030004', 2, NULL, 1, '$2y$10$8NFPjanqLGS1oGckxLco.eJM8kdK2ti0WAiVAzShEd1wlb6YHJDd6', 'NutevlEDe096zYczSrBL2udkm5NDvZwx1BTmxD0AuK1qBnhKeXwhzd6LV0wc', '2018-03-19 09:51:33', '2018-03-19 09:51:42');
 
 -- --------------------------------------------------------
 
@@ -725,17 +669,6 @@ CREATE TABLE `user_activations` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `user_activations`
---
-
-INSERT INTO `user_activations` (`id`, `user_id`, `token`, `created_at`, `updated_at`) VALUES
-(2, 5, '8zP3jiJQ5JTd3bG5kWm8Pj7pkvbmlx', NULL, NULL),
-(3, 6, 'ccJBtbFJRMqnICMvp7hPoefk6MmiJ5', NULL, NULL),
-(4, 7, 'Cy70IUMLnSBBnvV650XFWKBgsX5rZG', NULL, NULL),
-(5, 14, 'k6DJOih8XPP8p64OHyUZ3xdbX6UuMG', NULL, NULL),
-(6, 20, 'sXAsSeHgcYuU5dVL8LVYd3UYA3GuPn', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -933,17 +866,17 @@ ALTER TABLE `blogcategories`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `current_students`
 --
 ALTER TABLE `current_students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `ex_students`
 --
 ALTER TABLE `ex_students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `galleries`
 --
@@ -953,7 +886,7 @@ ALTER TABLE `galleries`
 -- AUTO_INCREMENT for table `gardians`
 --
 ALTER TABLE `gardians`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -993,27 +926,27 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `testmonials`
 --
 ALTER TABLE `testmonials`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `user_activations`
 --
 ALTER TABLE `user_activations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --

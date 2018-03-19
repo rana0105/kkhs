@@ -42,7 +42,10 @@ class StudentController extends Controller
         $user = User::findOrFail($id);
 
         // Update user
-        $user->fill($request->except('roles', 'permissions', 'password', 'student_status')+['role_id' => $request->roles]);
+        $user->fill($request->except('roles', 'permissions', 'password', 'student_status')+[
+                'role_id' => $request->roles,
+                'status' => $request->student_status
+            ]);
         if($user){
             $teacher = Student::where('user_id', $id)->update(['student_status' => $request->student_status]);
         }

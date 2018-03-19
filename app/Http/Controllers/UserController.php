@@ -149,7 +149,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
 
         // Update user
-        $user->fill($request->except('roles', 'permissions', 'password')+['role_id' => $request->roles]);
+        $user->fill($request->except('roles', 'permissions', 'password', 'student_status')+['role_id' => $request->roles]);
 
         // check for password change
         if($request->get('password')) {
