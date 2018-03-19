@@ -16,7 +16,7 @@
       {{-- <form class="form-style-search" action=""> --}}
           <div class="col-md-3">
             <div class="form-group row">
-              <label for="name" class="col-md-3 col-form-label">Name</label>
+              <label for="name" class="col-md-3 col-form-label">Name/ID</label>
                 <div class="col-md-9">
                   <input type="text" name="name" class="form-control name" id="name">
                 </div>
