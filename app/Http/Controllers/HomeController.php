@@ -48,6 +48,15 @@ class HomeController extends Controller
         return view('frontend.pages.showNotice', compact('notice'));
     }
 
+    public function printNotice($id)
+    {
+        $notice = Notice::find($id);
+        $pdf = \PDF::loadView('frontend.pages.printNotice', [
+                'notice' => $notice
+                ]);
+            return $pdf->stream('notice.pdf');
+    }
+
     public function eventShow($id)
     {
         $event = Sevent::find($id);
@@ -109,8 +118,50 @@ class HomeController extends Controller
                     ->orWhereHas('currentStudentInfo', function ($query) use ($student_id) {
                         $query->where('name', 'like', '%'.$student_id.'%');
                     })->where('student_class', $sclass)->with('currentStudentInfo')->get();
-            }
-            else{
+            }elseif ($student_id != '' && $sclass == '' && $department != '' && $section == '') {
+                $currentStudent = CurrentStudent::whereHas('currentStudentInfo', function ($query) use ($student_id) {
+                        $query->where('student_id', 'like', '%'.$student_id.'%');
+                    })
+                    ->orWhereHas('currentStudentInfo', function ($query) use ($student_id) {
+                        $query->where('name', 'like', '%'.$student_id.'%');
+                    })->where('student_department', $department)->with('currentStudentInfo')->get();
+            }elseif ($student_id != '' && $sclass == '' && $department == '' && $section != '') {
+                $currentStudent = CurrentStudent::whereHas('currentStudentInfo', function ($query) use ($student_id) {
+                        $query->where('student_id', 'like', '%'.$student_id.'%');
+                    })
+                    ->orWhereHas('currentStudentInfo', function ($query) use ($student_id) {
+                        $query->where('name', 'like', '%'.$student_id.'%');
+                    })->where('student_section', $section)->with('currentStudentInfo')->get();
+            }elseif ($student_id != '' && $sclass != '' && $department != '' && $section == '') {
+                $currentStudent = CurrentStudent::whereHas('currentStudentInfo', function ($query) use ($student_id) {
+                        $query->where('student_id', 'like', '%'.$student_id.'%');
+                    })
+                    ->orWhereHas('currentStudentInfo', function ($query) use ($student_id) {
+                        $query->where('name', 'like', '%'.$student_id.'%');
+                    })->where('student_class', $sclass)->where('student_department', $department)->with('currentStudentInfo')->get();
+            }elseif ($student_id != '' && $sclass != '' && $department == '' && $section != '') {
+                $currentStudent = CurrentStudent::whereHas('currentStudentInfo', function ($query) use ($student_id) {
+                        $query->where('student_id', 'like', '%'.$student_id.'%');
+                    })
+                    ->orWhereHas('currentStudentInfo', function ($query) use ($student_id) {
+                        $query->where('name', 'like', '%'.$student_id.'%');
+                    })->where('student_class', $sclass)->where('student_section', $section)->with('currentStudentInfo')->get();
+            }elseif ($student_id == '' && $sclass != '' && $department != '' && $section == '') {
+                $currentStudent = CurrentStudent::where('student_class', $sclass)->where('student_department', $department)->with('currentStudentInfo')->get();
+            }elseif ($student_id == '' && $sclass != '' && $department == '' && $section != '') {
+                $currentStudent = CurrentStudent::where('student_class', $sclass)->where('student_section', $section)->with('currentStudentInfo')->get();
+            }elseif ($student_id == '' && $sclass != '' && $department != '' && $section != '') {
+                $currentStudent = CurrentStudent::where('student_class', $sclass)->where('student_department', $department)->where('student_section', $section)->with('currentStudentInfo')->get();
+            }elseif ($student_id == '' && $sclass == '' && $department != '' && $section != '') {
+                $currentStudent = CurrentStudent::where('student_department', $department)->where('student_section', $section)->with('currentStudentInfo')->get();
+            }elseif ($student_id != '' && $sclass != '' && $department != '' && $section != '') {
+                $currentStudent = CurrentStudent::whereHas('currentStudentInfo', function ($query) use ($student_id) {
+                        $query->where('student_id', 'like', '%'.$student_id.'%');
+                    })
+                    ->orWhereHas('currentStudentInfo', function ($query) use ($student_id) {
+                        $query->where('name', 'like', '%'.$student_id.'%');
+                    })->where('student_class', $sclass)->where('student_department', $department)->where('student_section', $section)->with('currentStudentInfo')->get();
+            }else{
                 return 'Data not found';
             }
             return response()->json($currentStudent);
