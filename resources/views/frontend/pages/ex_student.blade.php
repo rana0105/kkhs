@@ -16,7 +16,7 @@
       </form>
 	</div>
 <div class="container">
-	<div class="row pt-md">
+	<div class="row pt-md result">
     @if(sizeof($exStudent)>0)
     @foreach($exStudent as $student)
 		<div class="col-md-3 profile">
@@ -42,9 +42,6 @@
     </div>
     @endforeach
     @endif
-    <div class="searchExStudentResult">
-      
-    </div>
 	</div>
 </div>
 
@@ -86,8 +83,44 @@ $(document).ready(function(){
         'searchKey':searchKey,
       },
       success: function(data) {
-        console.log(data);
-        $('.searchExStudentResult').html(data);
+        var result = '';
+        $.each(data, function(index, value){
+          result += '<div class="col-md-3 profile">';
+          result += '<div class="img-box">';
+          if (value ? value.ex_student_image : '') {
+            result += '<img src="/uploadfile/images/'+value.ex_student_image+'" class="img-responsive img-style img-thumbnail">';
+          }else{
+            result += '<img src="/uploadfile/images/image.jpg" class="img-responsive img-style img-thumbnail">';
+          }
+          result +='<ul class="text-center">';
+          var sclass = ['fa fa-facebook','fa fa-twitter','fa fa-linkedin'];
+          var i = 0;
+          if (value ? value.social_link : '') {
+            $.each(value.social_link.split(","), function(key, link){
+              result +='<a target="blank" href="'+link+'"><li><i class="'+sclass[i++]+'"></i></li></a>';
+              if (key == 2) {
+                return false;
+              }
+            });
+          }
+          result +='</ul>'
+          result +='</div>';
+          result +='<div class="profile-text">';
+          if (value.ex_student_info ? value.ex_student_info.name : '') {
+            result +='<h5>'+value.ex_student_info.name+'</h5>';
+          }else{
+            result +='<h5></h5>';
+          }
+          if (value ? value.ex_student_designation : '') {
+            result +='<h6>'+value.ex_student_designation+'</h6>';
+          }else{
+            result +='<h6></h6>';
+          }
+          result +='<a href="" data-id="'+value.user_id+'" data-toggle="modal" data-target=".bd-example-modal-lg" class="exstudent_show_modal">See Details</a>';
+          result +='</div>';
+          result +='</div>';
+        });
+        $('.result').html(result);
       }
     });
   });

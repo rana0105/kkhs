@@ -95,25 +95,25 @@ class HomeController extends Controller
                     ->orWhereHas('currentStudentInfo', function ($query) use ($student_id) {
                         $query->where('name', 'like', '%'.$student_id.'%');
                     })
-                    ->get();
+                    ->with('currentStudentInfo')->get();
             }elseif ($student_id == '' && $sclass != '' && $department == '' && $section == '') {
-                $currentStudent = CurrentStudent::where('student_class', $sclass)->get();
+                $currentStudent = CurrentStudent::where('student_class', $sclass)->with('currentStudentInfo')->get();
             }elseif ($student_id == '' && $sclass == '' && $department != '' && $section == '') {
-                $currentStudent = CurrentStudent::where('student_department', $department)->get();
+                $currentStudent = CurrentStudent::where('student_department', $department)->with('currentStudentInfo')->get();
             }elseif ($student_id == '' && $sclass == '' && $department == '' && $section != '') {
-                $currentStudent = CurrentStudent::where('student_section', $section)->get();
+                $currentStudent = CurrentStudent::where('student_section', $section)->with('currentStudentInfo')->get();
             }elseif ($student_id != '' && $sclass != '' && $department == '' && $section == '') {
                 $currentStudent = CurrentStudent::whereHas('currentStudentInfo', function ($query) use ($student_id) {
                         $query->where('student_id', 'like', '%'.$student_id.'%');
                     })
                     ->orWhereHas('currentStudentInfo', function ($query) use ($student_id) {
                         $query->where('name', 'like', '%'.$student_id.'%');
-                    })->where('student_class', $sclass)->get();
-                     dd($currentStudent);
+                    })->where('student_class', $sclass)->with('currentStudentInfo')->get();
             }
             else{
                 return 'Data not found';
             }
+            return response()->json($currentStudent);
         }
     }
 
@@ -149,13 +149,11 @@ class HomeController extends Controller
                 ->orWhereHas('exStudentInfo', function ($query) use ($searchKey) {
                         $query->where('student_id', 'like', '%'.$searchKey.'%');
                     })
-                ->get();
-                // return view('frontend.pages.ex_student')->with(, compact('exStudent', json_decode($exStudent,true)));
-                dd($exStudent);
-                return response()->json($exStudent);
+                ->with('exStudentInfo')->get();
             }else{
                 return 'Data not found';
             }
+            return response()->json($exStudent);
         }
         
     }
