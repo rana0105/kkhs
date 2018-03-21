@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 21, 2018 at 05:35 AM
+-- Generation Time: Mar 21, 2018 at 09:26 AM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
 -- PHP Version: 7.0.25-0ubuntu0.16.04.1
 
@@ -134,7 +134,8 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `user_id`, `blogcategories_id`, `title`, `description`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, 'Where can I get some?', '<p style="text-align: justify;">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure</p>', '611521604268.jpg', 1, '2018-03-20 21:51:08', '2018-03-20 21:51:18');
+(1, 1, 2, 'Where can I get some?', '<p style="text-align: justify;">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure</p>', '611521604268.jpg', 1, '2018-03-20 21:51:08', '2018-03-20 21:51:18'),
+(2, 5, 1, 'Vue-slider-component - npm', '<p style="text-align: justify;">Height, Number[,String(in vertical)], 6, height of the component. dot-size, Number, 16, determines width and height of the&nbsp;sliders. to set different values of width &amp; height&nbsp;use&nbsp;dot-width &amp; dot-height props. dot-width, Number, value of dot-size prop, width of&nbsp;sliders. if specified, overrides value of dot-size. dot-height, Number</p>', '321521618136.jpg', 1, '2018-03-21 01:42:16', '2018-03-21 01:47:44');
 
 -- --------------------------------------------------------
 
@@ -663,11 +664,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `role_id`, `is_activated`, `student_id`, `status`, `link`, `stage`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Md. Morshed Khan Rana', 'ranamim', 'admin@admin.com', 1, 1, '0', 0, NULL, 1, '$2y$10$pz19k.JR7DvkavZgKwSdSuz0E7YWABIddbcCFB0l9PZRXXOmUDu8u', 'xry8GVt9NnkTvvh2f5NKbRhCb58V6YvjUOL0yPwi2zP8HOpDhTalDSvwGgUk', '2018-02-20 09:39:18', '2018-02-20 09:39:18'),
+(1, 'Md. Morshed Khan Rana', 'ranamim', 'admin@admin.com', 1, 1, '0', 0, NULL, 1, '$2y$10$pz19k.JR7DvkavZgKwSdSuz0E7YWABIddbcCFB0l9PZRXXOmUDu8u', 'nq8yKt06NVrBAOcHBJCxlojCHaIWHPO2qAGa7mUzyRIm5fhCu7gE9efxRyEc', '2018-02-20 09:39:18', '2018-02-20 09:39:18'),
 (2, 'Abdul Jobbar', 'admin3', 'admin3@admin.com', 1, 1, NULL, 0, NULL, 1, '$2y$10$MCO/l4R3m18RkUrTAFD19egKf2o697vcvhC56684.lxm8FiIYoZgy', '6MtF4Z8bNc', '2018-02-20 09:39:19', '2018-03-19 09:21:47'),
 (3, 'Aminul Islam', 'admin2', 'admin2@admin.com', 1, 1, NULL, 0, NULL, 1, '$2y$10$aZyhpxBo9gQfXR/6ScDozuZikX6wGW2Qr9Z4YaH2OVl4WdHlsOBYW', 'U52OukYvmG', '2018-02-20 09:39:19', '2018-03-19 09:21:12'),
 (4, 'Mahabub-Ul Shamim', 'admin1', 'admin1@admin.com', 1, 1, NULL, 0, NULL, 1, '$2y$10$9g70WQlsLK5DOlz1GQJUkub345hA8MaG2P3icGZftsocQqy8jVCnu', 'iXwgZ8RZJF', '2018-02-20 09:39:19', '2018-03-19 09:20:01'),
-(5, 'Md. Morshed Khan Rana', 'rana0105', 'ra.ranacse@gmail.com', 3, 1, 'KKHS18030001', 2, 'GFfQEVuzqXWfVPQ4h4a62z7xiEnWbW', 1, '$2y$10$tCB0dA29frx0fPeoUYmz2eZn0WlaVA4XC92s6Zt/AWokFRL6yr1yq', 'xmVP8ttIx36Q8duwSXH43kUMalTazwGRDFNJPmeFWID547fjrgNwcgkupEpn', '2018-03-19 08:52:46', '2018-03-19 09:02:18'),
+(5, 'Md. Morshed Khan Rana', 'rana0105', 'ra.ranacse@gmail.com', 3, 1, 'KKHS18030001', 2, 'GFfQEVuzqXWfVPQ4h4a62z7xiEnWbW', 1, '$2y$10$tCB0dA29frx0fPeoUYmz2eZn0WlaVA4XC92s6Zt/AWokFRL6yr1yq', '32lwYaWgmPazKCY4NqNjUMixZoTuVIDRrkYVxAhEEMAPm6sWLkqHZCdgXOoY', '2018-03-19 08:52:46', '2018-03-19 09:02:18'),
 (6, 'Mahabub-ul Alam Shamim', 'shamim', 'shamim@gmail.com', 3, 1, 'KKHS18030002', 2, NULL, 1, '$2y$10$btQQTO247.gZY2jdF3994ueDphqYDTLBZWrnTco50LFcOYGWzR/ZW', 'sxTlLmesz49WbUe2KHwbLKk7GnvRxsYEBN48oOwr0JDdY4E1sEKCt69cZdDm', '2018-03-19 09:26:40', '2018-03-19 09:26:54'),
 (7, 'Aminul Islam', 'aminul', 'aminul@gmail.com', 3, 1, 'KKHS18030003', 2, NULL, 1, '$2y$10$VP39CoBgofwrrzEYuORsPey8n5DPLjVSWCV3BHovOz0BDmWFYsrZ6', '2NrW6aIuFRa9H6EYvMsLIOYF3IgVZb2ehRX2jWw2KSs8XaXzLpFEoFkbmsIT', '2018-03-19 09:35:55', '2018-03-19 09:36:05'),
 (8, 'Rokibul Hasan', 'rokibul', 'rokibul@gmail.com', 3, 1, 'KKHS18030004', 2, NULL, 1, '$2y$10$8NFPjanqLGS1oGckxLco.eJM8kdK2ti0WAiVAzShEd1wlb6YHJDd6', 'NutevlEDe096zYczSrBL2udkm5NDvZwx1BTmxD0AuK1qBnhKeXwhzd6LV0wc', '2018-03-19 09:51:33', '2018-03-19 09:51:42'),
@@ -883,7 +884,7 @@ ALTER TABLE `blogcategories`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `current_students`
 --
