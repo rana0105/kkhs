@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.6.4deb1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Mar 21, 2018 at 09:26 AM
--- Server version: 5.7.21-0ubuntu0.16.04.1
--- PHP Version: 7.0.25-0ubuntu0.16.04.1
+-- Host: localhost:3306
+-- Generation Time: Mar 21, 2018 at 11:25 PM
+-- Server version: 5.7.18-0ubuntu0.16.10.1
+-- PHP Version: 7.0.18-0ubuntu0.16.10.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -84,7 +84,7 @@ CREATE TABLE `autoids` (
 --
 
 INSERT INTO `autoids` (`id`, `auto_id`, `created_at`, `updated_at`) VALUES
-(1, 5, '2018-03-19 09:51:33', '2018-03-19 23:32:21');
+(1, 11, '2018-03-19 09:51:33', '2018-03-21 09:18:24');
 
 -- --------------------------------------------------------
 
@@ -166,7 +166,7 @@ CREATE TABLE `current_students` (
 --
 
 INSERT INTO `current_students` (`id`, `user_id`, `student_class`, `student_section`, `student_department`, `student_phone`, `student_father_name`, `student_mother_name`, `student_parent_phone`, `student_address`, `social_link`, `student_remark`, `student_image`, `created_at`, `updated_at`) VALUES
-(1, 9, '4', '0', '0', '01770817584', 'Md. Belal Hosen', 'Mst. Moriom Bibi', '01770817584', 'Gaihan, Manda, Naogaon', 'https://www.facebook.com/Rana0105CSE/,https://twitter.com/Rana0105CSE/,https://www.linkedin.com/in/rana0105cse/', NULL, '811521524127.jpg', '2018-03-19 23:35:27', '2018-03-19 23:35:27');
+(1, 9, '4', '0', '0', '01770817584', 'Md. Belal Hosen', 'Mst. Moriom Bibi', '01770817584', 'Gaihan, Manda, Naogaon', 'https://www.facebook.com/Rana0105CSE/,https://twitter.com/Rana0105CSE/,https://www.linkedin.com/in/rana0105cse/', NULL, '111521638292.jpg', '2018-03-19 23:35:27', '2018-03-21 07:18:12');
 
 -- --------------------------------------------------------
 
@@ -199,7 +199,13 @@ INSERT INTO `ex_students` (`id`, `user_id`, `ex_student_phone`, `ex_student_educ
 (1, 5, '01720292408', 'Bsc in Computer Science & Engineering', 'University of Information Technology & Sciences', 'IT Service', 'Software Developer', 'SparkBit', 'Chalkgopal, Manda, Naogaon', '2003-05-01', 'https://www.facebook.com/Rana0105CSE/,https://twitter.com/Rana0105CSE/,https://www.linkedin.com/in/rana0105cse/', '361521472301.jpg', '2018-03-19 09:11:41', '2018-03-19 09:11:41'),
 (2, 6, '01798312591', 'Msc in Biotechnology, Bsc in Genetic Engineering &  Biotechnology', 'Bangladesh Agricultural University & JUST', 'N/A', 'N/A', 'N/A', 'Chalkgopal, Manda, Naogaon', '2008-05-05', 'https://www.facebook.com/mahabubulalam.shamim/,https://twitter.com/,https://www.linkedin.com/', '411521473454.jpg', '2018-03-19 09:30:54', '2018-03-19 09:30:54'),
 (3, 7, '01734701530', 'MA Economics', 'Dhaka College', 'Marketing Executive', 'Marketing Executive', 'Montrims Ltd.  Mondol Group', 'Chalkgopal, Manda, Naogaon', '2004-05-01', 'https://www.facebook.com/profile.php?id=100005018282038,https://twitter.com/,https://www.linkedin.com/', '421521474081.jpg', '2018-03-19 09:41:21', '2018-03-19 09:41:21'),
-(4, 8, '01725455699', 'Msc in Mathematics', 'Rajshahi College', 'Teaching', 'Lecturer', 'Chakuli Degree College', 'Gaihana, Manda, Naogaon', '2003-05-01', 'https://www.facebook.com/jewel.rakibul/,https://twitter.com/,https://www.linkedin.com/', '581521475058.jpg', '2018-03-19 09:57:39', '2018-03-19 09:57:39');
+(4, 8, '01725455699', 'Msc in Mathematics', 'Rajshahi College', 'Teaching', 'Lecturer', 'Chakuli Degree College', 'Gaihana, Manda, Naogaon', '2003-05-01', 'https://www.facebook.com/jewel.rakibul/,https://twitter.com/,https://www.linkedin.com/', '581521475058.jpg', '2018-03-19 09:57:39', '2018-03-19 09:57:39'),
+(5, 14, '01739729823', 'SSC', 'KK High School', 'Business', 'Business', 'N/A', 'Boropai, Manda, Naogaon', '2003-05-01', 'https://www.facebook.com/,https://twitter.com/,https://www.linkedin.com/', '751521646228.jpg', '2018-03-21 09:30:29', '2018-03-21 09:30:29'),
+(6, 15, '01719473548', 'Bachelor of Dental Surgery', 'Rajshahi Medical College', 'Bangladesh Army', 'Captain', 'Bangladesh Army', 'Prosadpur, Manda, Naogaon', '2003-05-01', 'https://twitter.com/,https://www.linkedin.com/,https://www.facebook.com/waliul.kallol/', '451521652299.jpg', '2018-03-21 09:38:08', '2018-03-21 11:12:45'),
+(7, 17, '01717816684', 'Management', 'University of Rajshahi', 'Service', 'Assistant Director (General)', 'Bangladesh Bank', 'Boropai, Manda, Naogaon', '2003-05-01', 'https://www.facebook.com/profile.php?id=100012921259235,https://twitter.com/,https://www.linkedin.com/', '671521647005.jpg', '2018-03-21 09:43:25', '2018-03-21 11:20:11'),
+(8, 16, '01717797390', 'MBBS', 'Dhaka Medical College and Hospital', 'Doctor', 'Medical Officer', 'Government of the People\'s Republic of Bangladesh', 'Prosadpur, Manda, Naogaon', '2003-05-01', 'https://www.facebook.com/Asim.sarker63,https://twitter.com/,https://www.linkedin.com/', '141521647397.jpg', '2018-03-21 09:49:58', '2018-03-21 11:15:57'),
+(9, 18, '01724412591', 'Management', 'University of Rajshahi', 'Service', 'Marketing Executive', 'N/A', 'Kamarkuri, Manda, Naogaon', '2003-05-01', 'https://www.facebook.com/alef.uddin,https://twitter.com/,https://www.linkedin.com/', '711521647800.jpg', '2018-03-21 09:56:40', '2018-03-21 09:56:40'),
+(10, 19, '0175651530', 'MBA', 'Independent University, Bangladesh (IUB)', 'Service', 'HR, Admin & Compliance', 'Zaber & Zubair Fabrics Limited', 'Chakshamora, Manda, Naogaon', '2003-05-01', 'https://www.facebook.com/sultan.m.raihan/,https://twitter.com/,https://www.linkedin.com/', '651521648046.jpg', '2018-03-21 10:00:46', '2018-03-21 10:00:46');
 
 -- --------------------------------------------------------
 
@@ -321,13 +327,15 @@ INSERT INTO `model_has_roles` (`role_id`, `model_id`, `model_type`) VALUES
 (3, 8, 'App\\User'),
 (3, 9, 'App\\User'),
 (2, 10, 'App\\User'),
-(3, 11, 'App\\User'),
+(2, 11, 'App\\User'),
 (2, 12, 'App\\User'),
-(3, 13, 'App\\User'),
+(2, 13, 'App\\User'),
 (3, 14, 'App\\User'),
+(3, 15, 'App\\User'),
+(3, 16, 'App\\User'),
 (3, 17, 'App\\User'),
-(4, 18, 'App\\User'),
-(2, 19, 'App\\User'),
+(3, 18, 'App\\User'),
+(3, 19, 'App\\User'),
 (3, 20, 'App\\User');
 
 -- --------------------------------------------------------
@@ -590,7 +598,13 @@ INSERT INTO `students` (`id`, `user_id`, `student_status`, `created_at`, `update
 (2, 6, 2, '2018-03-19 09:26:40', '2018-03-19 09:26:53'),
 (3, 7, 2, '2018-03-19 09:35:55', '2018-03-19 09:36:05'),
 (4, 8, 2, '2018-03-19 09:51:33', '2018-03-19 09:51:42'),
-(5, 9, 1, '2018-03-19 23:32:21', '2018-03-19 23:32:31');
+(5, 9, 1, '2018-03-19 23:32:21', '2018-03-19 23:32:31'),
+(6, 14, 2, '2018-03-21 08:40:20', '2018-03-21 08:40:31'),
+(7, 15, 2, '2018-03-21 08:42:40', '2018-03-21 08:42:59'),
+(8, 16, 2, '2018-03-21 08:44:58', '2018-03-21 08:45:07'),
+(9, 17, 2, '2018-03-21 08:46:31', '2018-03-21 08:46:43'),
+(10, 18, 2, '2018-03-21 08:48:20', '2018-03-21 08:48:35'),
+(11, 19, 2, '2018-03-21 09:18:23', '2018-03-21 09:18:34');
 
 -- --------------------------------------------------------
 
@@ -612,6 +626,16 @@ CREATE TABLE `teachers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `teachers`
+--
+
+INSERT INTO `teachers` (`id`, `user_id`, `teacher_phone`, `teacher_education`, `teacher_desingnation`, `teacher_institute`, `teacher_address`, `social_link`, `teacher_image`, `teacher_status`, `created_at`, `updated_at`) VALUES
+(1, 10, '01837383683', 'Msc in Geology & Mining', 'In-Charge Principle', 'KK High School', 'Chackshamora, Manda, Naogaon', 'https://www.facebook.com/,https://twitter.com/,https://www.linkedin.com/', '141521639250.jpeg', 1, '2018-03-21 07:22:09', '2018-03-21 07:44:17'),
+(2, 11, '0186383683', 'MA in Bangla', 'Senior Teacher', 'KK High School', 'Kamarkuri, Manda, Naogoan', 'https://www.facebook.com/,https://twitter.com/,https://www.linkedin.com/', '281521639423.jpeg', 1, '2018-03-21 07:23:51', '2018-03-21 07:37:03'),
+(3, 12, '0178378373', 'MA in English', 'Ex Principle', 'KK High School', 'Prosadpur, Manda, Naogaon', 'https://www.facebook.com/,https://twitter.com/,https://www.linkedin.com/', '211521639581.jpeg', 2, '2018-03-21 07:24:56', '2018-03-21 07:39:41'),
+(4, 13, '0172892232', 'MA in History', 'Ex Senior Teacher', 'KK High School', 'Prosadpur, Manda, Naogaon', 'https://www.facebook.com/,https://twitter.com/,https://www.linkedin.com/', '581521639698.jpeg', 2, '2018-03-21 07:26:25', '2018-03-21 07:41:38');
 
 -- --------------------------------------------------------
 
@@ -672,7 +696,17 @@ INSERT INTO `users` (`id`, `name`, `username`, `email`, `role_id`, `is_activated
 (6, 'Mahabub-ul Alam Shamim', 'shamim', 'shamim@gmail.com', 3, 1, 'KKHS18030002', 2, NULL, 1, '$2y$10$btQQTO247.gZY2jdF3994ueDphqYDTLBZWrnTco50LFcOYGWzR/ZW', 'sxTlLmesz49WbUe2KHwbLKk7GnvRxsYEBN48oOwr0JDdY4E1sEKCt69cZdDm', '2018-03-19 09:26:40', '2018-03-19 09:26:54'),
 (7, 'Aminul Islam', 'aminul', 'aminul@gmail.com', 3, 1, 'KKHS18030003', 2, NULL, 1, '$2y$10$VP39CoBgofwrrzEYuORsPey8n5DPLjVSWCV3BHovOz0BDmWFYsrZ6', '2NrW6aIuFRa9H6EYvMsLIOYF3IgVZb2ehRX2jWw2KSs8XaXzLpFEoFkbmsIT', '2018-03-19 09:35:55', '2018-03-19 09:36:05'),
 (8, 'Rokibul Hasan', 'rokibul', 'rokibul@gmail.com', 3, 1, 'KKHS18030004', 2, NULL, 1, '$2y$10$8NFPjanqLGS1oGckxLco.eJM8kdK2ti0WAiVAzShEd1wlb6YHJDd6', 'NutevlEDe096zYczSrBL2udkm5NDvZwx1BTmxD0AuK1qBnhKeXwhzd6LV0wc', '2018-03-19 09:51:33', '2018-03-19 09:51:42'),
-(9, 'Mashrafee Mortoza Khan', 'mashrafee', 'mashrafee@gmail.com', 3, 1, 'KKHS18030005', 1, NULL, 1, '$2y$10$sL4lPOkx6UnjWKcxYBxKOeU.vpjLb2mi09Gk3j7B6HSXfg3KrqiMC', 'Sl3z2zQGLqlEB5f1jExkrFzkLKhaFODOR1W2fE74O00tgoyUIg816UDWAfGW', '2018-03-19 23:32:21', '2018-03-19 23:32:32');
+(9, 'Mashrafee Mortoza Khan', 'mashrafee', 'mashrafee@gmail.com', 3, 1, 'KKHS18030005', 1, NULL, 1, '$2y$10$sL4lPOkx6UnjWKcxYBxKOeU.vpjLb2mi09Gk3j7B6HSXfg3KrqiMC', 'ZVJzQyjAeJRB7ajZC3oqLzrwz3CQRju9j7p61sOP1xGFmN4Rcz77bLWlfngr', '2018-03-19 23:32:21', '2018-03-19 23:32:32'),
+(10, 'Md. Azaharul Islam', 'azahar', 'azahar@gmail.com', 2, 1, '0', 0, NULL, 1, '$2y$10$41PfSrc6kfAG5FosX6VAOueSxSYElVIaBZcnCbN6cOJqB1fNt9nr.', 'rYG5Hpj7uKzz9kLSYXWrdRu9mn1KgUVVL0b2gixBNte9y6SZOhjDJh9x1dQz', '2018-03-21 07:22:09', '2018-03-21 07:22:21'),
+(11, 'Md. Imran Hossain', 'imran', 'imran@gmail.com', 2, 1, '0', 0, NULL, 1, '$2y$10$7f7lgFDW9e0xpN1Vt2ZBw.rM1ILzYoSJX89FJUT8ibzkvtIsYJk.K', 'esfajEz29Q80jPDQOz8dRO4Xp5nbssZ4B1CNfPjUlwMYakgz6I5LoA0r5ZUk', '2018-03-21 07:23:51', '2018-03-21 07:24:02'),
+(12, 'Md. Akram Hossain', 'akram', 'akram@gmail.com', 2, 1, '0', 0, NULL, 1, '$2y$10$rKRTZnQYoceskAnh.zAsiO4mZjceTgm3Jn9XY05r20EfB9SWSv8WK', 'sDd9EYjQWJ6xMOmdYalZ0UPiaXHUnFka7U0HY5MxY8wbKSGGv7nCevKd8v3I', '2018-03-21 07:24:56', '2018-03-21 07:25:06'),
+(13, 'Md. Emdadul Hauqe', 'emdadul', 'emdadul@gmail.com', 2, 1, '0', 0, NULL, 1, '$2y$10$UU3FwKy7ZzFzG.Xa7qoehOkwa7iX3GfDVq87KyRr/ZapioQFNetfi', 'XJeTb7Ws6rBq8rCQJeg1CuPwP6k0gYbVxTt55y4hHnHj1jNXpNcrJlnksVb6', '2018-03-21 07:26:25', '2018-03-21 07:26:41'),
+(14, 'Abdul Jobbar', 'jobbar', 'jobbar@gmail.com', 3, 1, 'KKHS18030006', 2, NULL, 1, '$2y$10$syNX6JyWh8trAh9wQSHd1OLF0MWLP2sOuBjHMY1JLJdSuX0hXAxvu', 'P28PqWfKeJPYPdYWndHdYQivpMPa8ke6HFJ1vmBYGK9qUIH3PkN5PkjhI9Tv', '2018-03-21 08:40:20', '2018-03-21 08:40:31'),
+(15, 'Md. Waliul Bari Kallol', 'kallol', 'waliulkallol79@gmail.com', 3, 1, 'KKHS18030007', 2, NULL, 1, '$2y$10$xfUecYQGqf5kfkivoyIUy.HLpAUxvdrAThPEQrt4lSrTi6rY5EVu6', 'WcPK3mgAYRlRbWqptTO7OA8TSroMwoRo0O4VTlmdymXPjq4z32GCfkM7bPRv', '2018-03-21 08:42:40', '2018-03-21 11:23:11'),
+(16, 'Asim Sarker', 'asim', 'asim.sarker@yahoo.com', 3, 1, 'KKHS18030008', 2, NULL, 1, '$2y$10$91fXbD.IQzIrzfJe6hzS0OWIFdQ6knSmsEawnqD59SxLKaPcCXayq', 'd0FfELDLuAt9b8YPRg9810jzFVuflvNuXdvkDzWUEx6Grpj4Q3YtfZvyQhQA', '2018-03-21 08:44:58', '2018-03-21 11:15:35'),
+(17, 'Md. Mehedi Hasan', 'mehedi', 'mehedi@gmail.com', 3, 1, 'KKHS18030009', 2, NULL, 1, '$2y$10$ITziePjJr8v1u0x0/xDj/.AtF.FC1fVEtv58RfLXFEy/5yXgZjyL.', '8Yjkv31UEzRqIGIBGFT8y0P3mpbfgwQziE4JaO3e3lynV6XQwVjefZtFny1E', '2018-03-21 08:46:31', '2018-03-21 08:46:43'),
+(18, 'Alef Uddin', 'alef', 'alef@gmail.com', 3, 1, 'KKHS18030010', 2, NULL, 1, '$2y$10$vvJVIspccmrH.kfBKlp6genls84VRC67jnrYxllPrtnGT9HKy7KQi', 'e04U2K65XXrzkizCiYrT1Wf6A5hVIz1sCih4MIeMmgyJxF62g5qMQGkkjHI3', '2018-03-21 08:48:20', '2018-03-21 08:48:35'),
+(19, 'Md Sultan Mahmud Raihan', 'raihan', 'raihan@gmail.com', 3, 1, 'KKHS18030011', 2, NULL, 1, '$2y$10$nRGSuLwNWwL8U9sD0CNhBuHm.5hfC70JeQNXZy0.dUoRJNrR6mITG', 'ocLdcm1434OmtPbPrCyLZwxQEDrfMWAJH9o99I12Vy9YnTNgfho8GJLjvuJT', '2018-03-21 09:18:23', '2018-03-21 09:18:35');
 
 -- --------------------------------------------------------
 
@@ -894,7 +928,7 @@ ALTER TABLE `current_students`
 -- AUTO_INCREMENT for table `ex_students`
 --
 ALTER TABLE `ex_students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `galleries`
 --
@@ -944,12 +978,12 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `testmonials`
 --
@@ -959,7 +993,7 @@ ALTER TABLE `testmonials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `user_activations`
 --
