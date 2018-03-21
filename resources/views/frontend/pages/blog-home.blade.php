@@ -32,7 +32,7 @@
             <div class="card mb-4">
               <img class="card-img-top" src="{{ asset('uploadfile/images/'. $blog->image) }}" alt="Card image cap">
               <div class="card-body">
-                <h2 class="card-title">{{ $blog->title }}</h2>
+                <h2 class="card-title">{{ $blog->title }}</h2>{{ $blog->blogCategory->name }}
                 <p class="card-text">{!! str_limit(strip_tags($blog->description), 100) !!}</p>
                 <a href="{{route('blog.show', $blog->id)}}" class="btn button-style">Read More &rarr;</a>
               </div>
@@ -150,6 +150,8 @@ $(document).ready(function(){
           result += '<img class="card-img-top" src="/uploadfile/images/'+value.image+'" alt="Card image cap">';
           result += '<div class="card-body">';
           result += '<h1 class="card-title">'+value ? value.title : '' +'</h1>';
+          result += '<br>';
+          result += '<h4>'+value.blog_category ? value.blog_category.name : '' +'</h4>';
           result += '<p class="card-text">'+value ? value.description.substring(0 ,100) : '' +'</p>';
           result += '<a href="/blog/'+value.id+'/show" class="btn button-style">Read More &rarr;</a>';
           result += '</div>';
