@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4deb1
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2
+-- http://www.phpmyadmin.net
 --
--- Host: localhost:3306
--- Generation Time: Mar 19, 2018 at 10:02 PM
--- Server version: 5.7.18-0ubuntu0.16.10.1
--- PHP Version: 7.0.18-0ubuntu0.16.10.1
+-- Host: localhost
+-- Generation Time: Mar 21, 2018 at 05:35 AM
+-- Server version: 5.7.21-0ubuntu0.16.04.1
+-- PHP Version: 7.0.25-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -84,7 +84,7 @@ CREATE TABLE `autoids` (
 --
 
 INSERT INTO `autoids` (`id`, `auto_id`, `created_at`, `updated_at`) VALUES
-(1, 4, NULL, '2018-03-19 09:51:33');
+(1, 5, '2018-03-19 09:51:33', '2018-03-19 23:32:21');
 
 -- --------------------------------------------------------
 
@@ -129,6 +129,13 @@ CREATE TABLE `blogs` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `blogs`
+--
+
+INSERT INTO `blogs` (`id`, `user_id`, `blogcategories_id`, `title`, `description`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 2, 'Where can I get some?', '<p style="text-align: justify;">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure</p>', '611521604268.jpg', 1, '2018-03-20 21:51:08', '2018-03-20 21:51:18');
+
 -- --------------------------------------------------------
 
 --
@@ -152,6 +159,13 @@ CREATE TABLE `current_students` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `current_students`
+--
+
+INSERT INTO `current_students` (`id`, `user_id`, `student_class`, `student_section`, `student_department`, `student_phone`, `student_father_name`, `student_mother_name`, `student_parent_phone`, `student_address`, `social_link`, `student_remark`, `student_image`, `created_at`, `updated_at`) VALUES
+(1, 9, '4', '0', '0', '01770817584', 'Md. Belal Hosen', 'Mst. Moriom Bibi', '01770817584', 'Gaihan, Manda, Naogaon', 'https://www.facebook.com/Rana0105CSE/,https://twitter.com/Rana0105CSE/,https://www.linkedin.com/in/rana0105cse/', NULL, '811521524127.jpg', '2018-03-19 23:35:27', '2018-03-19 23:35:27');
 
 -- --------------------------------------------------------
 
@@ -304,7 +318,7 @@ INSERT INTO `model_has_roles` (`role_id`, `model_id`, `model_type`) VALUES
 (3, 6, 'App\\User'),
 (3, 7, 'App\\User'),
 (3, 8, 'App\\User'),
-(2, 9, 'App\\User'),
+(3, 9, 'App\\User'),
 (2, 10, 'App\\User'),
 (3, 11, 'App\\User'),
 (2, 12, 'App\\User'),
@@ -510,7 +524,7 @@ CREATE TABLE `sevents` (
   `time` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `date` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `location` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(10000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -521,9 +535,10 @@ CREATE TABLE `sevents` (
 --
 
 INSERT INTO `sevents` (`id`, `title`, `time`, `date`, `location`, `description`, `image`, `created_at`, `updated_at`) VALUES
-(2, 'Integer viverra eleifend neque', '09:00 AM to 12:00 PM', '2018-02-25', 'Dhaka', '<p><span style="color: #999999; font-family: \'Open Sans\', sans-serif; font-size: 14.4px; letter-spacing: 1px;">Aliquam erat volutpat. Duis vulputate tempus laoreet.</span></p>', '511520689810.jpg', '2018-02-25 09:14:15', '2018-03-10 07:51:41'),
-(3, 'Integer viverra eleifend neque', '6:00 am - 8:00 am', '2018-03-05', 'Newyork City, 1452', '<p><span style="color: #999999; font-family: \'Open Sans\', sans-serif; font-size: 14.4px; letter-spacing: 1px;">Aliquam erat volutpat. Duis vulputate tempus laoreet.</span></p>', '491520689985.jpg', '2018-03-10 07:53:05', '2018-03-10 07:53:05'),
-(4, 'Integer viverra eleifend neque', '6:00 am - 8:00 am', '2018-03-07', 'Newyork City, 1452', '<p><span style="color: #999999; font-family: \'Open Sans\', sans-serif; font-size: 14.4px; letter-spacing: 1px;">Aliquam erat volutpat. Duis vulputate tempus laoreet.</span></p>', '561520690081.jpg', '2018-03-10 07:54:41', '2018-03-10 07:54:41');
+(2, 'Integer viverra eleifend neque', '09:00 AM to 12:00 PM', '2018-02-25', 'Dhaka', '<p style="text-align: justify;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>', '511520689810.jpg', '2018-02-25 09:14:15', '2018-03-20 21:43:49'),
+(3, 'Integer viverra eleifend neque', '6:00 am - 8:00 am', '2018-03-05', 'Newyork City, 1452', '<p>Aliquam erat volutpat. Duis vulputate tempus laoreet.</p>', '491520689985.jpg', '2018-03-10 07:53:05', '2018-03-20 21:40:55'),
+(4, 'Integer viverra eleifend neque', '6:00 am - 8:00 am', '2018-03-07', 'Newyork City, 1452', '<p>Aliquam erat volutpat. Duis vulputate tempus laoreet.</p>', '561520690081.jpg', '2018-03-10 07:54:41', '2018-03-20 21:40:34'),
+(5, 'Why do we use it? sdsds', '09 AM to 5 PM', '2018-03-21', 'Manda, Naogaon', '<p style="text-align: justify;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>', '931521600827.jpg', '2018-03-20 20:53:47', '2018-03-20 21:45:44');
 
 -- --------------------------------------------------------
 
@@ -573,7 +588,8 @@ INSERT INTO `students` (`id`, `user_id`, `student_status`, `created_at`, `update
 (1, 5, 2, '2018-03-19 08:52:46', '2018-03-19 09:02:18'),
 (2, 6, 2, '2018-03-19 09:26:40', '2018-03-19 09:26:53'),
 (3, 7, 2, '2018-03-19 09:35:55', '2018-03-19 09:36:05'),
-(4, 8, 2, '2018-03-19 09:51:33', '2018-03-19 09:51:42');
+(4, 8, 2, '2018-03-19 09:51:33', '2018-03-19 09:51:42'),
+(5, 9, 1, '2018-03-19 23:32:21', '2018-03-19 23:32:31');
 
 -- --------------------------------------------------------
 
@@ -651,10 +667,11 @@ INSERT INTO `users` (`id`, `name`, `username`, `email`, `role_id`, `is_activated
 (2, 'Abdul Jobbar', 'admin3', 'admin3@admin.com', 1, 1, NULL, 0, NULL, 1, '$2y$10$MCO/l4R3m18RkUrTAFD19egKf2o697vcvhC56684.lxm8FiIYoZgy', '6MtF4Z8bNc', '2018-02-20 09:39:19', '2018-03-19 09:21:47'),
 (3, 'Aminul Islam', 'admin2', 'admin2@admin.com', 1, 1, NULL, 0, NULL, 1, '$2y$10$aZyhpxBo9gQfXR/6ScDozuZikX6wGW2Qr9Z4YaH2OVl4WdHlsOBYW', 'U52OukYvmG', '2018-02-20 09:39:19', '2018-03-19 09:21:12'),
 (4, 'Mahabub-Ul Shamim', 'admin1', 'admin1@admin.com', 1, 1, NULL, 0, NULL, 1, '$2y$10$9g70WQlsLK5DOlz1GQJUkub345hA8MaG2P3icGZftsocQqy8jVCnu', 'iXwgZ8RZJF', '2018-02-20 09:39:19', '2018-03-19 09:20:01'),
-(5, 'Md. Morshed Khan Rana', 'rana0105', 'ra.ranacse@gmail.com', 3, 1, 'KKHS18030001', 2, 'GFfQEVuzqXWfVPQ4h4a62z7xiEnWbW', 1, '$2y$10$tCB0dA29frx0fPeoUYmz2eZn0WlaVA4XC92s6Zt/AWokFRL6yr1yq', 'dCnyZ9RYmACmcntbKOA72pe0AejN1NXrX5DVKYUpAFHH8A4UgLZ15vtCySLj', '2018-03-19 08:52:46', '2018-03-19 09:02:18'),
+(5, 'Md. Morshed Khan Rana', 'rana0105', 'ra.ranacse@gmail.com', 3, 1, 'KKHS18030001', 2, 'GFfQEVuzqXWfVPQ4h4a62z7xiEnWbW', 1, '$2y$10$tCB0dA29frx0fPeoUYmz2eZn0WlaVA4XC92s6Zt/AWokFRL6yr1yq', 'xmVP8ttIx36Q8duwSXH43kUMalTazwGRDFNJPmeFWID547fjrgNwcgkupEpn', '2018-03-19 08:52:46', '2018-03-19 09:02:18'),
 (6, 'Mahabub-ul Alam Shamim', 'shamim', 'shamim@gmail.com', 3, 1, 'KKHS18030002', 2, NULL, 1, '$2y$10$btQQTO247.gZY2jdF3994ueDphqYDTLBZWrnTco50LFcOYGWzR/ZW', 'sxTlLmesz49WbUe2KHwbLKk7GnvRxsYEBN48oOwr0JDdY4E1sEKCt69cZdDm', '2018-03-19 09:26:40', '2018-03-19 09:26:54'),
 (7, 'Aminul Islam', 'aminul', 'aminul@gmail.com', 3, 1, 'KKHS18030003', 2, NULL, 1, '$2y$10$VP39CoBgofwrrzEYuORsPey8n5DPLjVSWCV3BHovOz0BDmWFYsrZ6', '2NrW6aIuFRa9H6EYvMsLIOYF3IgVZb2ehRX2jWw2KSs8XaXzLpFEoFkbmsIT', '2018-03-19 09:35:55', '2018-03-19 09:36:05'),
-(8, 'Rokibul Hasan', 'rokibul', 'rokibul@gmail.com', 3, 1, 'KKHS18030004', 2, NULL, 1, '$2y$10$8NFPjanqLGS1oGckxLco.eJM8kdK2ti0WAiVAzShEd1wlb6YHJDd6', 'NutevlEDe096zYczSrBL2udkm5NDvZwx1BTmxD0AuK1qBnhKeXwhzd6LV0wc', '2018-03-19 09:51:33', '2018-03-19 09:51:42');
+(8, 'Rokibul Hasan', 'rokibul', 'rokibul@gmail.com', 3, 1, 'KKHS18030004', 2, NULL, 1, '$2y$10$8NFPjanqLGS1oGckxLco.eJM8kdK2ti0WAiVAzShEd1wlb6YHJDd6', 'NutevlEDe096zYczSrBL2udkm5NDvZwx1BTmxD0AuK1qBnhKeXwhzd6LV0wc', '2018-03-19 09:51:33', '2018-03-19 09:51:42'),
+(9, 'Mashrafee Mortoza Khan', 'mashrafee', 'mashrafee@gmail.com', 3, 1, 'KKHS18030005', 1, NULL, 1, '$2y$10$sL4lPOkx6UnjWKcxYBxKOeU.vpjLb2mi09Gk3j7B6HSXfg3KrqiMC', 'Sl3z2zQGLqlEB5f1jExkrFzkLKhaFODOR1W2fE74O00tgoyUIg816UDWAfGW', '2018-03-19 23:32:21', '2018-03-19 23:32:32');
 
 -- --------------------------------------------------------
 
@@ -866,12 +883,12 @@ ALTER TABLE `blogcategories`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `current_students`
 --
 ALTER TABLE `current_students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `ex_students`
 --
@@ -916,7 +933,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `sevents`
 --
 ALTER TABLE `sevents`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `sliders`
 --
@@ -926,7 +943,7 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `teachers`
 --
@@ -941,7 +958,7 @@ ALTER TABLE `testmonials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `user_activations`
 --

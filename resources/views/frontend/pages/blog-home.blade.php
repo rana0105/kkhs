@@ -25,7 +25,7 @@
       <div class="row">
 
         <!-- Blog Entries Column -->
-        <div class="col-md-8" style="padding-top: 25px;">
+        <div class="col-md-8 result" style="padding-top: 25px;">
           <!-- Blog Post -->
           @if(sizeof($blogs)>0)
             @foreach($blogs as $blog)
@@ -71,7 +71,7 @@
             <h5 class="card-header">Search</h5>
             <div class="card-body">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
+                <input type="text" class="form-control searchBlog" placeholder="Search for...">
                 <span class="input-group-btn">
                   <button class="btn button-style" type="button">Go!</button>
                 </span>
@@ -116,7 +116,7 @@
 
           <!-- Side Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Side Widget</h5>
+            <h5 class="card-header">Popular Post</h5>
             <div class="card-body">
               You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
             </div>
@@ -129,4 +129,44 @@
 
     </div>
     <!-- /.container -->
+@endsection
+@section('script')
+<script type="text/javascript" src="http://momentjs.com/downloads/moment.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.searchBlog').keyup(function(){
+    var searchKey = $(this).val();
+    $.ajax({
+      url:'{{ URL::to('/searchBlog') }}',
+      type: "get",
+      data: {
+        'searchKey':searchKey,
+      },
+      success: function(data) {
+        console.log(data);
+        var result = '';
+        $.each(data, function(index, value){
+          result += '<div class="card mb-4">';
+          result += '<img class="card-img-top" src="/uploadfile/images/'+value.image+'" alt="Card image cap">';
+          result += '<div class="card-body">';
+          result += '<h1 class="card-title">'+value ? value.title : '' +'</h1>';
+          result += '<p class="card-text">'+value ? value.description.substring(0 ,100) : '' +'</p>';
+          result += '<a href="/blog/'+value.id+'/show" class="btn button-style">Read More &rarr;</a>';
+          result += '</div>';
+          result += '<div class="card-footer text-muted">';
+          result += 'Posted on '+moment().format('MMMM D, YYYY', value.created_at)+' by ';
+              if(value.blog_post_user.role_id == 1){
+                result += '<a href="#">Admin</a>';
+              }else{
+                result += '<a href="#">'+value.blog_post_user ? value.blog_post_user.name : '' +'</a>';
+              }
+          result +='</div>';
+          result +='</div>';
+        });
+        $('.result').html(result);
+      }
+    });
+  });
+});
+</script>
 @endsection

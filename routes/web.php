@@ -16,6 +16,7 @@ Route::get('contact','HomeController@getContact')->name('contact');
 Route::post('contact','HomeController@postContact')->name('contact.post');
 Route::get('blog','Backend\BlogController@getBlog')->name('blog');
 Route::get('blog/{id}/show','Backend\BlogController@getBlogShow')->name('blog.show');
+Route::get('searchBlog','Backend\BlogController@searchBlog');
 //Auth::routes();
 
 Route:: get('login', 'Auth\LoginController@showLoginForm')->name('login');

@@ -37,8 +37,8 @@ class HomeController extends Controller
         $events = Sevent::orderBy('id', 'desc')
                 ->limit(4)
                 ->get();
+                // dd($events); 
         $notices = Notice::orderBy('id', 'desc')->limit(10)->get();
-        //dd($notices); 
       return view('frontend.index', compact('sliders', 'testmonials', 'events', 'notices'));
     }
 

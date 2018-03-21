@@ -152,4 +152,22 @@ class BlogController extends Controller
         $blog->save();
         return redirect()->route('blog.post')->with('success', 'Blog post created successfully !');
     }
+
+    public function searchBlog(Request $request)
+    {
+        $searchKey = $request->searchKey;
+        if($request->ajax()){
+            if($searchKey != null){
+                $blogShow = Blog::where('title', 'like', '%' . $searchKey . '%')
+                ->orWhere('description', 'like', '%' . $searchKey . '%')
+                ->orWhereHas('blogCategory', function ($query) use ($searchKey) {
+                        $query->where('name', 'like', '%'.$searchKey.'%');
+                    })
+                ->with('blogCategory', 'blogPostUser')->get();
+            }else{
+                return 'Data not found';
+            }
+            return response()->json($blogShow);
+        }
+    }
 }

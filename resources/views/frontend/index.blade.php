@@ -180,33 +180,36 @@
                 </div>
             </div>
             <div class="row">
+                <?php $class = ['text-color1', 'text-color2', 'text-color3', 'text-color4']; $i = 0; ?>
+                @foreach($events as $event)
                 <div class="col-md-6 col-style">
                     <div class="row">
                         <div class="col-md-6">
-                            <img class="img img-responsive profile-style-img" src="{{asset('uploadfile/images')}}/{{ $events[0]['image'] or 'event.jpg' }}" alt="">
+                            <img class="img img-responsive profile-style-img" src="{{asset('uploadfile/images')}}/{{ $event->image or 'event.jpg' }}" alt="">
                         </div>
                         <div class="col-md-6">
-                            <div class="news-left-top-text text-color1">
-                                <a href="#" data-toggle="modal" class="eventShow" data-id="{{ $events[0]['id'] or '' }}" data-target="#myModal">{{ $events[0]['title'] or '' }}</a>
+                            <div class="news-left-top-text {{ $class[$i++] }}">
+                                <a href="#" data-toggle="modal" class="eventShow" data-id="{{ $event->id or '' }}" data-target="#myModal">{{ $event->title or '' }}</a>
                             </div>
                             <div class="date-grid">
                                 <div class="admin">
                                     <a href="#">
-                                        <span class="fa fa-clock-o" aria-hidden="true"></span> {{ $events[0]['time'] or '' }}</a>
+                                        <span class="fa fa-clock-o" aria-hidden="true"></span> {{ $event->time or '' }}</a>
                                 </div>
                                 <div class="time">
                                     <p>
-                                        <span class="fa fa-map-marker" aria-hidden="true"></span> {{ $events[0]['location'] or '' }}</p>
+                                        <span class="fa fa-map-marker" aria-hidden="true"></span> {{ $event->location or '' }}</p>
                                 </div>
                                 <div class="clearfix"> </div>
                             </div>
-                            <div class="news-grid-info-bottom-w3ls-text">
-                                <p>{!! $events[0]['description'] or '' !!}</p>
+                            <div class="news-grid-info-bottom-w3ls-text event-text-style">
+                                <p>{!! str_limit(strip_tags($event->description), 130) !!}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-style">
+                @endforeach
+                {{-- <div class="col-md-6 col-style">
                     <div class="row">
                         <div class="col-md-6">
                             <img class="img img-responsive profile-style-img" src="{{asset('uploadfile/images')}}/{{ $events[1]['image'] or 'event.jpg' }}" alt="">
@@ -283,7 +286,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
