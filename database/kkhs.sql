@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4deb1
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2
+-- http://www.phpmyadmin.net
 --
--- Host: localhost:3306
--- Generation Time: Mar 21, 2018 at 11:25 PM
--- Server version: 5.7.18-0ubuntu0.16.10.1
--- PHP Version: 7.0.18-0ubuntu0.16.10.1
+-- Host: localhost
+-- Generation Time: Mar 22, 2018 at 08:22 AM
+-- Server version: 5.7.21-0ubuntu0.16.04.1
+-- PHP Version: 7.0.28-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -84,7 +84,7 @@ CREATE TABLE `autoids` (
 --
 
 INSERT INTO `autoids` (`id`, `auto_id`, `created_at`, `updated_at`) VALUES
-(1, 11, '2018-03-19 09:51:33', '2018-03-21 09:18:24');
+(1, 13, '2018-03-19 09:51:33', '2018-03-21 21:00:52');
 
 -- --------------------------------------------------------
 
@@ -166,7 +166,9 @@ CREATE TABLE `current_students` (
 --
 
 INSERT INTO `current_students` (`id`, `user_id`, `student_class`, `student_section`, `student_department`, `student_phone`, `student_father_name`, `student_mother_name`, `student_parent_phone`, `student_address`, `social_link`, `student_remark`, `student_image`, `created_at`, `updated_at`) VALUES
-(1, 9, '4', '0', '0', '01770817584', 'Md. Belal Hosen', 'Mst. Moriom Bibi', '01770817584', 'Gaihan, Manda, Naogaon', 'https://www.facebook.com/Rana0105CSE/,https://twitter.com/Rana0105CSE/,https://www.linkedin.com/in/rana0105cse/', NULL, '111521638292.jpg', '2018-03-19 23:35:27', '2018-03-21 07:18:12');
+(1, 9, '4', '0', '0', '01770817584', 'Md. Belal Hosen', 'Mst. Moriom Bibi', '01770817584', 'Gaihan, Manda, Naogaon', 'https://www.facebook.com/Rana0105CSE/,https://twitter.com/Rana0105CSE/,https://www.linkedin.com/in/rana0105cse/', NULL, '111521638292.jpg', '2018-03-19 23:35:27', '2018-03-21 07:18:12'),
+(2, 20, '3', '1', '1', '018754646', 'Kabir Ali', 'Kamrun Nahar', '018754646', 'Manda, Naogaon', 'https://www.facebook.com/,https://twitter.com/,https://www.linkedin.com/', NULL, '501521706369.jpg', '2018-03-22 02:12:49', '2018-03-22 02:12:49'),
+(3, 21, '4', '1', '2', '01750817584', 'MK Kdir Molla', 'Mst. Moasa Bibi', '01750817584', 'Manda, Naogaon', 'https://www.facebook.com/,https://twitter.com/,https://www.linkedin.com/', NULL, '151521706572.jpeg', '2018-03-22 02:16:12', '2018-03-22 02:16:12');
 
 -- --------------------------------------------------------
 
@@ -336,7 +338,8 @@ INSERT INTO `model_has_roles` (`role_id`, `model_id`, `model_type`) VALUES
 (3, 17, 'App\\User'),
 (3, 18, 'App\\User'),
 (3, 19, 'App\\User'),
-(3, 20, 'App\\User');
+(3, 20, 'App\\User'),
+(3, 21, 'App\\User');
 
 -- --------------------------------------------------------
 
@@ -604,7 +607,9 @@ INSERT INTO `students` (`id`, `user_id`, `student_status`, `created_at`, `update
 (8, 16, 2, '2018-03-21 08:44:58', '2018-03-21 08:45:07'),
 (9, 17, 2, '2018-03-21 08:46:31', '2018-03-21 08:46:43'),
 (10, 18, 2, '2018-03-21 08:48:20', '2018-03-21 08:48:35'),
-(11, 19, 2, '2018-03-21 09:18:23', '2018-03-21 09:18:34');
+(11, 19, 2, '2018-03-21 09:18:23', '2018-03-21 09:18:34'),
+(12, 20, 1, '2018-03-21 20:59:44', '2018-03-21 20:59:58'),
+(13, 21, 1, '2018-03-21 21:00:52', '2018-03-21 21:01:02');
 
 -- --------------------------------------------------------
 
@@ -706,7 +711,9 @@ INSERT INTO `users` (`id`, `name`, `username`, `email`, `role_id`, `is_activated
 (16, 'Asim Sarker', 'asim', 'asim.sarker@yahoo.com', 3, 1, 'KKHS18030008', 2, NULL, 1, '$2y$10$91fXbD.IQzIrzfJe6hzS0OWIFdQ6knSmsEawnqD59SxLKaPcCXayq', 'd0FfELDLuAt9b8YPRg9810jzFVuflvNuXdvkDzWUEx6Grpj4Q3YtfZvyQhQA', '2018-03-21 08:44:58', '2018-03-21 11:15:35'),
 (17, 'Md. Mehedi Hasan', 'mehedi', 'mehedi@gmail.com', 3, 1, 'KKHS18030009', 2, NULL, 1, '$2y$10$ITziePjJr8v1u0x0/xDj/.AtF.FC1fVEtv58RfLXFEy/5yXgZjyL.', '8Yjkv31UEzRqIGIBGFT8y0P3mpbfgwQziE4JaO3e3lynV6XQwVjefZtFny1E', '2018-03-21 08:46:31', '2018-03-21 08:46:43'),
 (18, 'Alef Uddin', 'alef', 'alef@gmail.com', 3, 1, 'KKHS18030010', 2, NULL, 1, '$2y$10$vvJVIspccmrH.kfBKlp6genls84VRC67jnrYxllPrtnGT9HKy7KQi', 'e04U2K65XXrzkizCiYrT1Wf6A5hVIz1sCih4MIeMmgyJxF62g5qMQGkkjHI3', '2018-03-21 08:48:20', '2018-03-21 08:48:35'),
-(19, 'Md Sultan Mahmud Raihan', 'raihan', 'raihan@gmail.com', 3, 1, 'KKHS18030011', 2, NULL, 1, '$2y$10$nRGSuLwNWwL8U9sD0CNhBuHm.5hfC70JeQNXZy0.dUoRJNrR6mITG', 'ocLdcm1434OmtPbPrCyLZwxQEDrfMWAJH9o99I12Vy9YnTNgfho8GJLjvuJT', '2018-03-21 09:18:23', '2018-03-21 09:18:35');
+(19, 'Md Sultan Mahmud Raihan', 'raihan', 'raihan@gmail.com', 3, 1, 'KKHS18030011', 2, NULL, 1, '$2y$10$nRGSuLwNWwL8U9sD0CNhBuHm.5hfC70JeQNXZy0.dUoRJNrR6mITG', 'ocLdcm1434OmtPbPrCyLZwxQEDrfMWAJH9o99I12Vy9YnTNgfho8GJLjvuJT', '2018-03-21 09:18:23', '2018-03-21 09:18:35'),
+(20, 'MK Likhon', 'likhon', 'likhon@lkhon.com', 3, 1, 'KKHS18030012', 1, NULL, 1, '$2y$10$syFqpT2OOgsBKF5K3QyE1OPJgNZhdUVR4uHFtKGluNwSoJ3LtQ3gS', 'DpztB8592CcU2GAbgeLWjv4FmDQ6MLE3a3bqJF0d1aRIMB8kRbsSacPcGC96', '2018-03-21 20:59:44', '2018-03-21 20:59:58'),
+(21, 'Akash Khan', 'akash', 'akash@gmail.com', 3, 1, 'KKHS18030013', 1, NULL, 1, '$2y$10$/dQehcDUCRCb7a2q3EqiYewULiQrCDI4Lf1YUpwhGCrHSA4gfrDlm', 'bxo8nuPwEZ6hN4p289WFShd2aEAeDLNDXSP6Wo3aYaWMtY7slJ0tWQ1KT9DD', '2018-03-21 21:00:52', '2018-03-21 21:01:02');
 
 -- --------------------------------------------------------
 
@@ -923,7 +930,7 @@ ALTER TABLE `blogs`
 -- AUTO_INCREMENT for table `current_students`
 --
 ALTER TABLE `current_students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `ex_students`
 --
@@ -978,7 +985,7 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `teachers`
 --
@@ -993,7 +1000,7 @@ ALTER TABLE `testmonials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `user_activations`
 --
