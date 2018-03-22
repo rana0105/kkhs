@@ -94,25 +94,26 @@
 							            </div>
 							            <div class="col-md-6">
 							            	<div class="info-style">
-							            		<h4>{{ $exTeacher->teachersDetails->name }}</h4>
-							              		<h6>{{ $exTeacher->teacher_desingnation }}</h6>
-							              		<h6>{{ $exTeacher->teacher_education }}</h6>
-							              		<p><b>{{ $exTeacher->teacher_phone }}</b></p>
-							              		<p><b>{{ $exTeacher->teachersDetails->email }}</b></p>
-							              		<p><b>{{ $exTeacher->teacher_address }}</b></p>
+							              		<h4>{{ $exTeacher->teachersDetails->name }}</h4>
+							              		<h6 class="style-h">{{ $exTeacher->teachersDetails->email }}</h6>
+							              		<h6 class="style-h">{{ $exTeacher->teacher_phone }}</h6>
+							              		<h6 class="style-h">{{ $exTeacher->teacher_education }}</h6>
+							              		<h6 class="style-h">{{ $exTeacher->teacher_desingnation }}</h6>
+							              		<h6 class="style-h">{{ $exTeacher->teacher_institute }}</h6>
+							              		<h6 class="style-h">{{ $exTeacher->teacher_address }}</h6>
 							              		<div class="img-box-icon">
-								              			<ul class="text-left">
-								                  <?php $className = ['fa fa-facebook','fa fa-twitter','fa fa-linkedin']; $i = 0; ?>
-								                  	@if($exTeacher->social_link != null)
-						                              	@foreach(explode(',', $exTeacher->social_link) as $key => $link)
-							                              <a href="{{ $link }}"><li><i class="{{ $className[$i++] }}"></i></li></a>
-							                              	@if($key == 2 )
-							                              		@php break @endphp
-							                              	@endif
-						                              	@endforeach
-						                            @endif
-								                </ul>
-								              		</div>
+							              			<ul class="text-left">
+									                  <?php $className = ['fa fa-facebook','fa fa-twitter','fa fa-linkedin']; $i = 0; ?>
+									                  	@if($exTeacher->social_link != null)
+							                              	@foreach(explode(',', $exTeacher->social_link) as $key => $link)
+								                              <a href="{{ $link }}"><li><i class="{{ $className[$i++] }}"></i></li></a>
+								                              	@if($key == 2 )
+								                              		@php break @endphp
+								                              	@endif
+							                              	@endforeach
+							                            @endif
+									                </ul>
+							              		</div>
 							            	</div>
 							            </div>
 					          		</div>

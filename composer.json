@@ -7,16 +7,11 @@
     "require": {
         "php": ">=5.6.4",
         "barryvdh/laravel-dompdf": "^0.8.1",
-        "consoletvs/charts": "4.*",
-        "guzzlehttp/guzzle": "~5.2",
         "intervention/image": "^2.4",
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.3.0",
-        "milon/barcode": "^5.3",
-        "paypal/rest-api-sdk-php": "*",
-        "pusher/pusher-php-server": "~2.6",
         "spatie/laravel-permission": "^2.1"
     },
     "require-dev": {
