@@ -2,8 +2,9 @@
 		<div class="">
 			<img class="img img-thumbnail ima-responsive" src="{{ asset('uploadfile/images') }}/{{ $currentStudent ? $currentStudent->student_image : 'image.jpg' }}" alt="" />
 		</div>
-    <h5>{{ $currentStudent->currentStudentInfo ? $currentStudent->currentStudentInfo->name : ''}}</h5>
-    <p>Class:  <b>{{ $currentStudent ? config('class.reverse_class.'.$currentStudent->student_class) : '' }}</b>  Section:  <b>{{ $currentStudent ? config('section.reverse_section.'.$currentStudent->student_section) : '' }}</b></p>
+    <h6>{{ $currentStudent->currentStudentInfo ? $currentStudent->currentStudentInfo->name : ''}}</h6>
+    {{-- <p>Class:  <b>{{ $currentStudent ? config('class.reverse_class.'.$currentStudent->student_class) : '' }}</b>  Section:  <b>{{ $currentStudent ? config('section.reverse_section.'.$currentStudent->student_section) : '' }}</b></p> --}}
+    <p style="color: #000000"><b>ID:</b> <b>{{ $currentStudent->currentStudentInfo ? $currentStudent->currentStudentInfo->student_id : ''}}</b></p>
 </div>
 <div class="col-md-8">
 	<div class="row">

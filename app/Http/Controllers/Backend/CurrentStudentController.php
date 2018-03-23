@@ -116,7 +116,7 @@ class CurrentStudentController extends Controller
                 if($images){
                     $filename = rand(10,100) . time().'.'.$images->getClientOriginalExtension();
                     $location = 'uploadfile/images/'. $filename;
-                    Image::make($images)->resize(500 , 550)->save($location);
+                    Image::make($images)->resize(600 , 600)->save($location);
 
                     $profile = new CurrentStudent;
                     $profile->user_id = $id;

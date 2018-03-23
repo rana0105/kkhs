@@ -88,7 +88,8 @@
       </div>
       <div class="profile-text">
         <h5>{{ $student->currentStudentInfo ? $student->currentStudentInfo->name : ''}}</h5>
-        <p>Class:  <b>{{ $student ? config('class.reverse_class.'.$student->student_class) : '' }}</b>  Section:  <b>{{ $student ? config('section.reverse_section.'.$student->student_section) : '' }}</b></p>
+        {{-- <p>Class:  <b>{{ $student ? config('class.reverse_class.'.$student->student_class) : '' }}</b>  Section:  <b>{{ $student ? config('section.reverse_section.'.$student->student_section) : '' }}</b></p> --}}
+        <p style="color: #000000"><b>ID:</b> <b>{{ $student->currentStudentInfo ? $student->currentStudentInfo->student_id : ''}}</b></p>
         <a href="" data-id="{{ $student->user_id }}" data-toggle="modal" data-target=".bd-example-modal-lg" class="currentstudent_show_modal">See Details</a>
       </div>
     </div>

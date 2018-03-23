@@ -7,6 +7,10 @@
 </div>
 <div class="col-md-8">
 	<div class="row">
+		<div class="col-4 text-right"><b>ID</b></div>
+		<div class="col-8 text-left"><b>{{ $exStudent->exStudentInfo ? $exStudent->exStudentInfo->student_id : ''}}</b></div>
+	</div>
+	<div class="row">
 		<div class="col-4 text-right"><b>Name</b></div>
 		<div class="col-8 text-left">{{ $exStudent->exStudentInfo ? $exStudent->exStudentInfo->name : ''}}</div>
 	</div>

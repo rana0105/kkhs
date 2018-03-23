@@ -612,6 +612,7 @@ ul.porund li, a {
 
 .col-md-4.text-center.modal-text {
     color: #37bf90;
+    font-size: 20px;
 }
 
 .profile-text {
@@ -623,6 +624,7 @@ ul.porund li, a {
 }
 .profile-text>h5 {
     color:  #37bf90;
+    font-size: 20px;
 }
 .profile-text>a {
     font-size: 15px;
