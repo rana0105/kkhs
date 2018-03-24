@@ -1,5 +1,12 @@
 @extends('frontend.layouts.main')
 @section('content')
+    <div class="customAlert">
+      <div class="customAlert-style">
+        <div class="d-flex justify-content-center alert-text-style">
+          <h5>Data Not Found</h5>
+        </div>
+      </div>
+    </div>
 	<div class="inner_page_agile">
 
 	</div>
@@ -123,8 +130,10 @@ $(document).ready(function(){
         });
         $('.result').html(result);
       }else{
-        alert('Data not found');
-        // $('.result').html('Data not found');
+        $('.customAlert').css('display','block');
+        setTimeout(function(){ 
+          $('.customAlert').css('display','none');
+         }, 2000);
       }
       }
     });
