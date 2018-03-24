@@ -631,7 +631,9 @@ ul.porund li, a {
 }
 
 h6.style-h {
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
 }
 
 .img-box-icon {
