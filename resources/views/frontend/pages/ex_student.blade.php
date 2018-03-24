@@ -83,6 +83,7 @@ $(document).ready(function(){
         'searchKey':searchKey,
       },
       success: function(data) {
+        if (typeof data !== 'undefined' && data.length > 0) {
         var result = '';
         $.each(data, function(index, value){
           result += '<div class="col-md-3 profile">';
@@ -121,6 +122,10 @@ $(document).ready(function(){
           result +='</div>';
         });
         $('.result').html(result);
+      }else{
+        alert('Data not found');
+        // $('.result').html('Data not found');
+      }
       }
     });
   });

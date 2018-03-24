@@ -1,5 +1,20 @@
 @extends('frontend.layouts.main')
 @section('content')
+
+
+    <div class="customAlert">
+      <div class="customAlert-style">
+        <div class="d-flex justify-content-center alert-text-style">
+          <h5>Data Not Found</h5>
+        </div>
+      </div>
+    </div>
+   {{--  <div class="customAlert alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div> --}}
 	<div class="inner_page_agile">
 
 	</div>
@@ -179,42 +194,49 @@ function studentSearch(){
       },
       success: function(data) {
         console.log(data);
-        var result = '';
-        $.each(data, function(index, value){
-          result += '<div class="col-md-3 profile">';
-          result += '<div class="img-box">';
-          if (value ? value.student_image : '') {
-            result += '<img src="/uploadfile/images/'+value.student_image+'" class="img-responsive img-style img-thumbnail">';
-          }else{
-            result += '<img src="/uploadfile/images/image.jpg" class="img-responsive img-style img-thumbnail">';
-          }
-          result +='<ul class="text-center">';
-          var sclass = ['fa fa-facebook','fa fa-twitter','fa fa-linkedin'];
-          var i = 0;
-          if (value ? value.social_link : '') {
-            $.each(value.social_link.split(","), function(key, link){
-              result +='<a target="blank" href="'+link+'"><li><i class="'+sclass[i++]+'"></i></li></a>';
-              if (key == 2) {
-                return false;
-              }
-            });
-          }
-          result +='</ul>'
-          result +='</div>';
-          result +='<div class="profile-text">';
-          if (value.current_student_info ? value.current_student_info.name : '') {
-            result +='<h5>'+value.current_student_info.name+'</h5>';
-          }else{
-            result +='<h5></h5>';
-          }
-          if (value ? value.student_class : '' && value ? value.student_section : '') {
-            result +='Class:  <b>'+value.sclass[value.student_class]+'</b> Section:  <b>'+value.section[value.student_section]+'</b></p>'
-          }
-          result +='<a href="" data-id="'+value.user_id+'" data-toggle="modal" data-target=".bd-example-modal-lg" class="currentstudent_show_modal">See Details</a>';
-          result +='</div>';
-          result +='</div>';
-        });
-        $('.result').html(result);
+        if (typeof data !== 'undefined' && data.length > 0) {
+          var result = '';
+          $.each(data, function(index, value){
+            result += '<div class="col-md-3 profile">';
+            result += '<div class="img-box">';
+            if (value ? value.student_image : '') {
+              result += '<img src="/uploadfile/images/'+value.student_image+'" class="img-responsive img-style img-thumbnail">';
+            }else{
+              result += '<img src="/uploadfile/images/image.jpg" class="img-responsive img-style img-thumbnail">';
+            }
+            result +='<ul class="text-center">';
+            var sclass = ['fa fa-facebook','fa fa-twitter','fa fa-linkedin'];
+            var i = 0;
+            if (value ? value.social_link : '') {
+              $.each(value.social_link.split(","), function(key, link){
+                result +='<a target="blank" href="'+link+'"><li><i class="'+sclass[i++]+'"></i></li></a>';
+                if (key == 2) {
+                  return false;
+                }
+              });
+            }
+            result +='</ul>'
+            result +='</div>';
+            result +='<div class="profile-text">';
+            if (value.current_student_info ? value.current_student_info.name : '') {
+              result +='<h5>'+value.current_student_info.name+'</h5>';
+            }else{
+              result +='<h5></h5>';
+            }
+            if (value ? value.student_class : '' && value ? value.student_section : '') {
+              result +='Class:  <b>'+value.sclass[value.student_class]+'</b> Section:  <b>'+value.section[value.student_section]+'</b></p>'
+            }
+            result +='<a href="" data-id="'+value.user_id+'" data-toggle="modal" data-target=".bd-example-modal-lg" class="currentstudent_show_modal">See Details</a>';
+            result +='</div>';
+            result +='</div>';
+          });
+          $('.result').html(result);
+        }else{
+          $('.customAlert').css('display','block');
+          setTimeout(function(){ 
+            $('.customAlert').css('display','none');
+           }, 2000);
+        }
       }
     });
   } 
